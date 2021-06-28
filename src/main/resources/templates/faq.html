@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>FAQ</title>
+        <meta charset="utf-8">
+            <!-- bootstrap vs fontawesome-->
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                    <link rel="icon" th:href="@{/Assets_Web/img/favicon.png}" type="image/x-icon"/>
+                    <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-about.css}">
+                        <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-res-about.css}">
+                            <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-faq.css}">
+                                <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-fix-nav.css}">
+                                    <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-form-search-mobile.css}">
+                                        <!-- slick -->
+
+                                        <!-- GG FONT -->
+                                        <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+                                            <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700" rel="stylesheet">
+                                                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+                                                    </head>
+                                                    <body>
+                                                                                                 <style  th:replace="Fragment_App/fragments_app::icon_whatsaapp"></style>
+                                                            <div th:replace="Fragment_App/fragments_app::icon_what_msg" ></div>
+
+
+                                                            <!-- Header fragment -->
+                                                            <header th:replace="Fragment_App/fragments_app::header_app2"></header>
+                                                        <main>
+          
+                                                            <div class="banner">
+                                                                <div class="container">
+                                                                    <figure id="banner-about"><a href="#"><img th:src="@{/Assets_Web/img/1350x500.png}" class="img-responsive" alt="img-holiwood"></a></figure>
+                                                                    <div class="title-banner">
+                                                                        <h1>Preguntas frecuentes</h1>
+                                                                        <p><a th:href="@{/}" title="Inicio">Home</a><i class="fa fa-caret-right"></i>Preguntas frecuentes</p>
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="page-faq">
+                                                                <div class="container container-ver2">
+                                                                    <div class="content-text space-50">
+                                                                        <h2>Información comercial</h2>
+                                                                        <div class="row">
+                                                                            <div class="col-md-6 space-50">
+                                                                                <h3>¿Qué métodos de envío están disponibles?</h3>
+                                                                                <p>Roactively procrastinate market-driven niche markets and robust value. Appropriately harness multidisciplinary scenarios whereas diverse catalysts for change. Energistically provide access to future-proof deliverables and distinctive manufactured products.Proactively procrastinate market-driven niche</p>
+                                                                            </div>
+                                                                            <div class="col-md-6 space-50">
+                                                                                <h3>¿Que metodos de pago estan disponible?</h3>
+                                                                                <p>Roactively procrastinate market-driven niche markets and robust value. Appropriately harness multidisciplinary scenarios whereas diverse catalysts for change. Energistically provide access to future-proof deliverables and distinctive manufactured products.Proactively procrastinate market-driven niche</p>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- End content-text -->
+                                                                    <div class="content-text space-50">
+                                                                        <h2>Información pago</h2>
+                                                                        <div class="row">
+                                                                            <div class="col-md-6 space-50">
+                                                                                <h3>¿Cuanto tarda la verificacion de pago de mi?</h3>
+                                                                                <p>Roactively procrastinate market-driven niche markets and robust value. Appropriately harness multidisciplinary scenarios whereas diverse catalysts for change. Energistically provide access to future-proof deliverables and distinctive manufactured products.Proactively procrastinate market-driven niche</p>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- End content-text -->
+                                                                    <div class="content-text space-50">
+                                                                        <h2>Pedido/devoluciones</h2>
+                                                                        <div class="row">
+                                                                            <div class="col-md-6 space-50">
+                                                                                <h3>¿Cuanto tarda en llegar mi pedido?</h3>
+                                                                                <p>Roactively procrastinate market-driven niche markets and robust value. Appropriately harness multidisciplinary scenarios whereas diverse catalysts for change. Energistically provide access to future-proof deliverables and distinctive manufactured products.Proactively procrastinate market-driven niche</p>
+                                                                            </div>
+                                                                            <div class="col-md-6 space-50">
+                                                                                <h3>¿Luego de cuantos dias puedo hacer devoluciòn?</h3>
+                                                                                <p>Roactively procrastinate market-driven niche markets and robust value. Appropriately harness multidisciplinary scenarios whereas diverse catalysts for change. Energistically provide access to future-proof deliverables and distinctive manufactured products.Proactively procrastinate market-driven niche</p>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- End content-text -->
+                                                                </div>
+                                                                <!-- End container -->
+                                                            </div>
+                                                            <!-- End page faq -->
+
+                                                        </main>
+                                                   <footer th:replace="Fragment_App/fragments_app::footer"></footer>
+
+                                                        <!-- boostrap & jquery -->
+                                                        <script th:src="@{/js/jquery.min_af.js}"></script>
+                                                        <script th:src="@{/js/bootstrap.min_0028.js}"></script>
+
+                                                        <!-- js file -->
+                                                        <script th:src="@{/js/function-back-top.js}"></script>
+                                                        <script th:src="@{/js/function-sidebar.js}"></script>
+                                                        <script th:src="@{/js/funtion-header-v3.js}"></script>
+                                                        <script th:src="@{/js/function-search-v2.js}"></script>
+                                                    </body>
+                                                    </html>

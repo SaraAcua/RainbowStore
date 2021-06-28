@@ -1,0 +1,138 @@
+@media (max-width: 1199px){
+	header{
+		.menu-main{
+			li{ padding-right: 5px;
+				&.shop-menu{
+					.dropdown-menu{left: -260px;}
+				}
+			}
+		}
+		.icon-menu{
+			li{
+				img{
+					&#search-img{margin-right: 10px;}
+				}
+				.fa-user{padding-right: 33px;}
+			}
+		}
+	}
+}
+@media (max-width: 991px){
+	#myNavbar{
+		position: fixed;
+		left: -260px;
+		top: 0;
+		max-height: unset;
+		height: 100% !important;
+		overflow-x: hidden !important;
+		width: 260px;
+    	background: #fff;
+    	transition: all .3s ease;
+    	z-index: 20;
+    	border: 0;
+    	box-shadow: none;
+    	padding: 0;
+	}
+	.icon-menu{
+		    padding: 26px 56px 0 25px;
+		&::before{
+			top: 30px;
+    		left: 212px;
+		}
+		li{
+			&.icon-user{float: left;}
+			&.cart-menu{float: left;}
+			&#input-search{float: left;}
+		}
+		.cart-menu{
+		.dropdown-menu{
+			    right: 24px;
+		}
+	}
+	}
+	.mobile-menu{
+		position: absolute;
+		z-index: 1;
+		right: 0;
+		top: 24px;
+		.fa-bars{font-size: 22px;}
+	}
+	header{
+		.menu-mobile{position: absolute;left: 0;}
+		padding: 10px 0;
+		transition: all .3s ease;
+		.menu-main{position: unset;
+		&::before{
+			display:none;
+		}
+		#btn-close-menu{
+			position: absolute;
+			right: 5px;
+			top: 5px;
+			font-size: 26px;
+		}
+		li{
+
+			&:first-child{a{padding-left: 15px;}}
+			padding-right: 0;
+			a{padding-right: 0;font-size: 14px;}
+			&.menu-home{
+				.dropdown-menu{
+					display: none;
+					&.menu-home-lv2{margin-top: -32px;
+						.li-home{margin-left: 0;}
+					}
+				}
+				
+			}
+			&.shop-menu{
+				.dropdown-menu{
+					display: none;
+					margin-top: -40px;
+				}
+				
+			}
+		}
+	}
+	}
+}
+@media (max-width: 736px){
+	header{
+		.icon-menu{padding: 10px 74px 0 0;float: right;
+			&::before{left:unset;top: 18px;right: 90px;}
+			.cart-menu{
+				.dropdown-menu{left: unset;}
+			}
+		}
+		.menu-main{padding-left: 15px;}
+	}
+}
+@media (max-width: 375px){
+	header{
+		.icon-menu{
+			padding: 12px 56px 0 0;
+			&::before{right: 56px;}
+			li{
+				a{padding-right: 0;}
+				.fa-user{padding-right: 20px;}
+				&#input-search{
+					.alert-search{left: unset;right: -150px;}
+				}
+			}
+			.cart-menu {
+				.dropdown-menu{right: 5px;}
+			}
+		}
+	}
+}
+@media (max-width: 320px){
+	header{
+		.logo{
+			img{width: 140%;padding-top: 8px;}
+		}
+		.icon-menu{
+			padding: 4px 56px 0 0;
+			&::before{top: 11px;}
+		}
+	}
+}

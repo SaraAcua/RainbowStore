@@ -1,0 +1,44 @@
+/*------------------------------------
+	[Table of contents]
+	1. Body
+	2. Header / #header
+	3. Navigation / #navbar
+	4. Content / #content
+	5. Sidebar / #sidebar
+	6. Search / #search
+	7. Footer / #footer
+	
+--------------------------------------*/
+@import "style-res-shop";
+@import "bootstrap/mixin-style-search";
+@media (max-width: 1399px){
+	.article{
+		.sort{padding-left: 5px;}
+	}
+}
+@media (max-width: 1199px){
+	main{
+		position: relative;margin-top: 20px;
+	}
+	.menu-breadcrumb{
+		position: absolute;top: 0;left: 0;right: 0;padding-left: 25px;
+	}
+}
+@media (max-width: 567px){
+	.social{
+		span{font-size: 14px;}
+	}
+	.article{
+		.sort{
+			padding:30px 0 0 25px;
+		}
+	}
+	.menu-breadcrumb{
+		padding-left: 16px;
+	}
+}
+@media (max-width: 320px){
+	.social{
+		span{padding-right: 120px;}
+	}
+}

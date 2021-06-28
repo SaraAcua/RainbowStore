@@ -1,0 +1,177 @@
+/*------------------------------------
+	[Table of contents]
+	1. Body
+	2. Header / #header
+	3. Navigation / #navbar
+	4. Content / #content
+	5. Sidebar / #sidebar
+	6. Search / #search
+	7. Footer / #footer
+	
+--------------------------------------*/
+@import 'bootstrap/mixin';
+.page-login{
+.social{
+	text-align: center;
+	a{
+		display: inline-block;
+		width: calc(50% - 5px);
+		color: #fff;
+		font: 500 14px/40px "Poppins";
+		background: #3b5998;
+		i{    margin-right: 5px;}
+		&:last-child{
+			background: #55acee;
+		}
+		&:hover{
+			text-decoration: none;
+		}
+	}
+}
+h3{
+	font: 700 16px/20px "Poppins";
+text-transform: uppercase;
+padding-bottom: 10px;
+margin-bottom: 20px;
+position: relative;
+}
+p{
+	font: 300 14px/20px "Poppins";
+color: #888;
+margin-bottom: 20px;
+}
+form{
+	input[type=checkbox]{
+		display: none;
+		&:checked + label{
+			&:before{
+				content: "\2713";
+    			font-size: 15px;
+    			color: #333;
+    			text-align: center;
+    			line-height: 18px;
+			}
+		}
+	}
+	.control-label{
+		font: 700 14px/20px "Poppins";
+		color: #000;
+		text-transform: uppercase;
+	}
+	.remember{
+		float: left;
+		width: 100%;
+		label{
+			&.label-check{
+
+				width: auto;
+    			color: #888;
+    			cursor: pointer;
+    			position: relative;
+    			display: inline-block;
+    			padding-left: 30px;
+    			float: left;
+    			margin: 10px 0px;
+    			font: 300 14px "Poppins";
+    			&:before{
+    				content: "";
+    				display: inline-block;
+    				width: 20px;
+    				height: 20px;
+    				margin-right: 10px;
+    				position: absolute;
+    				left: 0;
+    				bottom: 1px;
+    				border: 1px solid #b5b5b5;
+    				background-color: #fff;
+    			}
+			}
+		}
+		.help{
+			float: right;
+    		font: 300 14px/20px "Poppins";
+    		vertical-align: bottom;
+    		margin-top: 12px;
+		}
+	}
+	label{
+		&.label-check{
+			position: relative;
+    		width: 100%;
+    		display: inline-block;
+    		padding-left: 30px;
+    		float: left;
+    		margin: 10px 0px;
+    		font: 400 14px "Poppins";
+    		color: #373737;
+    		&:before{
+    				content: "";
+    				display: inline-block;
+    				width: 20px;
+    				height: 20px;
+    				margin-right: 10px;
+    				position: absolute;
+    				left: 0;
+    				bottom: 1px;
+    				border: 1px solid #b5b5b5;
+    				background-color: #fff;
+    			}
+		}
+	}
+}
+}
+.space-30{
+margin-bottom: 30px !important;
+}
+.float-left{
+float: left;
+}
+.float-right{
+float: right;
+}
+.box{
+display: inline-block;
+width: 100%;
+}
+.space-20{
+margin-bottom: 20px !important;
+}
+.form-control {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    color: #888888;
+    padding: 9px 20px;
+    line-height: 1.625;
+    height: 47px;
+    display: block;
+    width: 100%;
+    font: 400 16px "Poppins";
+    box-shadow:unset;
+}
+.form-horizontal{
+	label{
+		&.control-label{
+			    margin-bottom: 10px;
+    			display: block;
+    			text-align: left;
+		}
+	}
+}
+.form-horizontal{
+	button{
+	@include btn-shopnow;
+	}
+}
+@media (max-width: 467px){
+.page-login{
+	.social{
+		a{
+			width: 100%;
+			&.float-left{
+				margin-bottom: 20px;
+			}
+		}
+	}
+}
+}

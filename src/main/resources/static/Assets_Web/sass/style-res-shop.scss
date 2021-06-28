@@ -1,0 +1,147 @@
+/*------------------------------------
+	[Table of contents]
+	1. Body
+	2. Header / #header
+	3. Navigation / #navbar
+	4. Content / #content
+	5. Sidebar / #sidebar
+	6. Search / #search
+	7. Footer / #footer
+	
+--------------------------------------*/
+@import "bootstrap/mixin-header-v3";
+@import "bootstrap/mixin-back-top";
+@import "bootstrap/mixin-mysidebar";
+@import "bootstrap/mixin-active-bg-menu";
+@import "style-res-contact";
+@import "bootstrap/mixin-style-search";
+@media (max-width: 1399px){
+	.banner{
+		.text-banner{
+			left: 130px;
+			top: 74px;
+		}
+	}
+}
+@media (max-width: 1199px){
+	.banner{
+		.text-banner{
+			left: 86px;
+    		top: 24px;
+		}
+	}
+}
+@media (max-width: 991px){
+	.sidebar{
+		.list-2{
+			.title-post{padding: 15px 0 0 0;}
+		}
+	}
+	.mobile-sidebar{
+		transition: all .3s ease;
+		position: fixed;
+		top: 40%;
+		right: 15px;
+		z-index: 3;
+		button{
+			margin: 0;
+			padding: 10px 18px;
+			background: #f3f3f5;
+			box-shadow: 0 10px 20px 0 rgba(0,0,0,.1);
+			border-radius: 50%;
+			i{font-size: 24px;padding-top: 1px;text-align: center;transition: all .3s ease;}
+		}
+	}
+	.mobile-menu{right: 24px;}
+	.banner{
+		padding-bottom: 0;
+		.text-banner{
+			left: 70px;
+    		top: 6px;
+    		h1{font-size: 50px;}
+    		p{font-size: 24px;}
+    		a{font-size: 14px;padding: 8px 20px;}
+		}
+	}
+}
+@media (max-width: 768px){
+	.mobile-menu{right: 2px;}
+}
+@media (max-width: 736px){
+	.content{
+		.content-blog{
+			.title-blog{
+				padding-left: 0;
+			}
+		}
+	}
+}
+@media (max-width: 667px){
+	.banner{
+		.text-banner{
+			left: 50px;
+    		top: 8px;
+    		h1{font-size: 40px;}
+    		p{font-size: 18px;}
+    		
+		}
+	}
+}
+@media (max-width: 568px){
+	.banner{
+		.text-banner{
+			
+    		top: -10px;
+    		
+		}
+	}
+	.content{
+		form{
+			input{
+				width: 40%;
+			}
+			button{left: 33%;}
+		}
+	}
+}
+@media (max-width: 567px){
+	.banner{
+		.text-banner{
+			h1{font-size: 22px;}
+			p{font-size: 14px;margin-bottom: 20px;}
+			a{padding: 5px 10px;}
+		}
+	}
+	.content{
+		form{
+			input{
+				width: 60%;
+			}
+			button{left: 50%;}
+		}
+	}
+}
+@media (max-width: 320px){
+	.banner{
+		.text-banner{
+			left: 28px;
+			top: -19px;
+			h1{font-size: 22px;}
+			p{margin-bottom: 10px;}
+		}
+	}
+	.content{
+		.content-blog{
+			.title-blog{
+				.time-blog{
+					.time{
+						padding-right: 5px;
+						&:last-child{
+							padding-left: 0px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

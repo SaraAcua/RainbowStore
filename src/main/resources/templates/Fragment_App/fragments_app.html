@@ -1,0 +1,337 @@
+
+<header th:fragment="header_app" class="navbar-fixed-top pos-header" id="header-v1">
+    <nav class="hidden-xs">
+        <div class="container">
+            <ul class="nav navbar-nav nav-help">
+                <li><span>P:</span>321 5754862</li>
+                <li><span>E:</span>Arcoirisshop@gmail.com</li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right language">
+                <li class="dropdown esp-language"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Eng</a><figure id="language-figure"></figure>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Esp</a></li>
+                        <li><a href="#">Eng</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+
+
+            <div class="navbar-header mobile-menu">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <i class="fas fa-bars"></i>                 
+                </button>
+            </div>
+            <div class="collapse navbar-collapse col-lg-6 col-md-6 col-sm-12 col-xs-12" id="myNavbar">
+                <form class="hidden-lg hidden-md form-group form-search-mobile">
+                    <input type="text" name="search" placeholder="Search here..." class="form-control">
+                    <button type="submit"><img th:src="@{/Assets_Web/img/Search.png}" alt="search" class="img-responsive"></button>
+                </form>
+                <ul class="nav navbar-nav menu-main">
+                    <li><figure id="btn-close-menu" class="hidden-lg hidden-md"><i class="far fa-times-circle"></i></figure></li>
+                    <li class="dropdown menu-home">
+                        <a th:href="@{/}" id="home-menu" class="dropdown-toggle" data-toggle="dropdown">Inicio</a>
+
+                    </li>
+                    <li class="shop-menu dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Tienda +</a><figure id="shop-1" class="hidden-sm hidden-xs"></figure>
+                        <div class="dropdown-menu">
+                            <div class="container container-menu">
+                                <ul class="row">
+                                    <li class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                        <ul>
+                                            <li class="col-lg-4 col-md-4 col-sm-12 col-xs-12 menu-home-lv2">
+                                                <ul>
+                                                    <li><a href="#">TIENDA ARCORIS</a> </li>
+                                                    <li class="li-home li-one"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a  th:href="@{/shop}">Colecciones</a></li>
+                                                    <!--<li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="shop-left-sidebar.html">Left sidebar</a></li>
+                                                    <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="shop-full-screen.html">Full screen</a></li>
+                                                    <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="shop-full-width.html">Full width</a></li>
+                                                    <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="singel-detail.html">Singel detail</a></li>-->
+
+                                                </ul>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-12 col-xs-12 menu-home-lv2">
+                                                <ul>
+                                                    <li><a href="#">CHECKING PAGINA</a></li> 
+                                                    <li class="li-home li-one"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a th:href="@{/shopping-cart}">Carrito de compras</a></li>
+                                                    <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a th:href="@{/checkout}">Checkout</a></li>
+                                                    <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a th:href="@{/order}">Compras Completadas</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-12 col-xs-12 menu-home-lv2">
+                                                <ul>
+                                                    <li><a href="#">OTRAS PAGINAS</a></li>
+                                                    <li class="li-home li-one"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a th:href="@{/faq}">FAQ</a></li>
+                                                    <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a th:href="@{/login}">Login/Registro</a></li>
+                                                    <!--<li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="page404.html">Page404</a></li>-->
+                                                    <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a th:href="@{tracking}">Tracking</a></li>
+                                                    <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a th:href="@{/wishlist}">Lista de deseos</a></li>
+                                                </ul>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="col-lg-4 col-md-4 hidden-sm hidden-xs li-banner">
+                                        <a href="#"><img th:src="@{/Assets_Web/img/340x420N.png}" alt="img-holiwood"></a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="wedding-menu"><a th:href="@{/about}">Nosotros</a><figure id="wedding-1" class="hidden-sm hidden-xs"></figure></li>
+                    <li class="blog-menu dropdown">
+                        <a th:href="@{/blog}">Blog</a><figure id="blog-1" class=" hidden-sm hidden-md hidden-xs"></figure>
+
+                    </li>
+                    <li class="contact-menu"><a th:href="@{/contact}">Contacto</a><figure id="contact-1" class="hidden-sm hidden-xs"></figure></li>
+
+                </ul>
+            </div>
+            <ul class="logo col-lg-2 col-md-2 col-sm-7 col-xs-7">
+                <li><a th:href="@{/}"><img th:src="@{/Assets_Web/img/logotitle.png}" class="img-responsive" alt="img-holiwood"></a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right icon-menu col-lg-4 col-md-4 col-sm-5 col-xs-5">
+                <li class="icon-user hidden-sm hidden-xs"><a th:href="@{/login}"><i class="far fa-user"></i></a></li>
+                <li class="dropdown cart-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img th:src="@{/Assets_Web/img/cart.png}" id="img-cart" alt="img-holiwood"></a>
+                    <div class="dropdown-menu">
+                        <div class="cart-1">
+                            <div class="img-cart"><img th:src="@{/Assets_Web/img/340x420 (2).png}" class="img-responsive" alt="img-holiwood"></div>
+                            <div class="info-cart">
+                                <h1>Pink roses</h1>
+                                <span class="number">x1</span>
+                                <span class="prince-cart">$8.000</span>
+                            </div>
+                        </div>
+                        <div class="cart-1">
+                            <div class="img-cart"><img th:src="@{/Assets_Web/img/340x420N.png}" class="img-responsive" alt="img-holiwood"></div>
+                            <div class="info-cart">
+                                <h1>Eleganr by BloomNation</h1>
+                                <span class="number">x1</span>
+                                <span class="prince-cart">$8.000</span>
+                            </div>
+                        </div>
+                        <div class="cart-1">
+                            <div class="img-cart"><img th:src="@{/Assets_Web/img/340x420 (2).png}" class="img-responsive" alt="img-holiwood"></div>
+                            <div class="info-cart">
+                                <h1>Queen Rose - Yellow</h1>
+                                <span class="number">x1</span>
+                                <span class="prince-cart">$12.000</span>
+                            </div>
+                        </div>
+                        <div class="total">
+                            <span>Total:</span>
+                            <span>$8.000</span>
+                        </div>
+                        <div id="div-cart-menu">
+                            <a href="#">ADD TO CART</a>
+                            <a href="#" class="check">CHECK VIEW</a>
+                        </div>
+                    </div>
+                </li>
+                <li id="input-search" class="hidden-sm hidden-xs">
+                    <a href="#"><img th:src="@{/Assets_Web/img/Search.png}" alt="img-holiwood"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<style  th:fragment="icon_whatsaapp"  type="text/css">
+    .redes-flotantes {
+        position: fixed;
+        right: 8px;
+        top: 75%;
+        z-index: 20;
+    }
+    .redes-flotantes img {
+        float: right; clear: right;
+        margin: 5px;
+        -moz-transform: scale(.8) ;
+        -webkit-transform: scale(.8) ;
+        -o-transform: scale(.8) ;
+        -ms-transform: scale(.8) ;
+        transform: scale(.8) ;
+        -webkit-transition: all .2s ease-in-out;
+        -moz-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+    }
+    .redes-flotantes img:hover {
+        -moz-transform: scale(1.1) rotate(6deg);
+        -webkit-transform: scale(1.1) rotate(6deg);
+        -o-transform: scale(1.1) rotate(6deg);
+        -ms-transform: scale(1.1) rotate(6deg);
+        transform: scale(1.1) rotate(6deg);
+    }</style>
+
+<div th:fragment="icon_what_msg"class='redes-flotantes'>
+
+
+    <div class="separator" style="clear: both; text-align: left;">
+    </div>
+    <div class="separator" style="clear: both; text-align: center;">
+    </div>
+    <div class="separator" style="clear: both; text-align: center;">
+    </div>
+    <div class="separator" style="clear: both; text-align: left;">
+        <a href="http://wa.me/3145812303" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;" target="_blank"><img border="0" data-original-height="59" data-original-width="59" src="https://1.bp.blogspot.com/-q3Dot9N2qac/XOQgr9etVpI/AAAAAAABT1M/6V4Bqaqr-6UQcl9Fy2_CaVgex0N_OYuQgCLcBGAs/s1600/whatsapp%2Bicono.png" /></a></div>
+    <div class="separator" style="clear: both; text-align: center;">
+        <a href="https://m.me/Moños-Arcoiris-2171299293132636/" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;" target="_blank"><img border="0" data-original-height="59" data-original-width="59" src="https://3.bp.blogspot.com/-SK4W7Kmjoh8/XOQj5wjwERI/AAAAAAABT1g/2i3wxgGTwdU8v67F1rMOAe3ooWu9f2fEACLcBGAs/s1600/facebook%2Bmessenger%2Bicono.png" /></a></div></div>
+
+
+
+
+<header th:fragment="header_app2" class="container" id="header-v3">
+
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 logo"><a th:href="@{/}"><img th:src="@{/Assets_Web/img/logo.png}" alt="img-holiwood"></a></div>
+        <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 menu-mobile">
+            <div class=" collapse navbar-collapse" id="myNavbar">
+
+                <form class="hidden-lg hidden-md form-group form-search-mobile">
+                    <input type="text" name="search" placeholder="Search here..." class="form-control">
+                    <button type="submit"><img th:src="@{/Assets_Web/img/Search.png}" alt="search" class="img-responsive"></button>
+                </form>
+                <ul class="nav navbar-nav menu-main">
+
+                    <li><figure id="btn-close-menu" class="hidden-lg hidden-md"><i class="far fa-times-circle"></i></figure></li>
+                    <li class="dropdown menu-home">
+                        <a th:href="@{/}" id="home-menu" class="dropdown-toggle" data-toggle="dropdown">Inicio</a>
+
+                    </li>
+                    <li class="shop-menu dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Tienda +</a><figure id="shop-1" class="hidden-sm hidden-xs"></figure>
+                        <div class="dropdown-menu">
+                            <div class="container container-menu">
+                                <ul class="row">
+                                    <li class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                        <ul>
+                                            <li class="col-lg-4 col-md-4 col-sm-12 col-xs-12 menu-home-lv2">
+                                                <ul>
+                                                    <li><a href="#">TIENDA ARCORIS</a> </li>
+                                                    <li class="li-home li-one"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a  th:href="@{/shop}">Colecciones</a></li>
+                                                    <!--<li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="shop-left-sidebar.html">Left sidebar</a></li>
+                                                    <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="shop-full-screen.html">Full screen</a></li>
+                                                    <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="shop-full-width.html">Full width</a></li>
+                                                    <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="singel-detail.html">Singel detail</a></li>-->
+
+                                                </ul>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-12 col-xs-12 menu-home-lv2">
+                                                <ul>
+                                                    <li><a href="#">CHECKING PAGINA</a></li> 
+                                                    <li class="li-home li-one"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a th:href="@{/shopping-cart}">Carrito de compras</a></li>
+                                                    <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a th:href="@{/checkout}">Checkout</a></li>
+                                                    <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a th:href="@{/order}">Compras Completadas</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-12 col-xs-12 menu-home-lv2">
+                                                <ul>
+                                                    <li><a href="#">OTRAS PAGINAS</a></li>
+                                                    <li class="li-home li-one"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a th:href="@{/faq}">FAQ</a></li>
+                                                    <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a th:href="@{/login}">Login/Registro</a></li>
+                                                    <!--<li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="page404.html">Page404</a></li>-->
+                                                    <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a th:href="@{tracking}">Tracking</a></li>
+                                                    <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a th:href="@{/wishlist}">Lista de deseos</a></li>
+                                                </ul>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="col-lg-4 col-md-4 hidden-sm hidden-xs li-banner">
+                                        <a href="#"><img th:src="@{/Assets_Web/img/340x420N.png}" alt="img-holiwood"></a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="wedding-menu"><a th:href="@{/about}">Nosotros</a><figure id="wedding-1" class="hidden-sm hidden-xs"></figure></li>
+                    <li class="blog-menu dropdown">
+                        <a th:href="@{/blog}">Blog</a><figure id="blog-1" class=" hidden-sm hidden-md hidden-xs"></figure>
+
+                    </li>
+                    <li class="contact-menu"><a th:href="@{/contact}">Contacto</a><figure id="contact-1" class="hidden-sm hidden-xs"></figure></li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-10 col-xs-9">
+            <ul class="nav navbar-nav navbar-right icon-menu">
+
+
+                <li id="input-search" class="hidden-sm hidden-xs">
+                    <a href="#"><img id="search-img" th:src="@{/Assets_Web/img/Search.png}" alt="img-holiwood"></a>
+
+                </li>
+                <li class="icon-user hidden-sm hidden-xs"><a href="#"><i class="far fa-user"></i></a></li>
+                <li class="dropdown cart-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img th:src="@{/Assets_Web/img/cart.png}" id="img-cart" alt="img-holiwood"></a>
+                    <div class="dropdown-menu">
+                        <div class="cart-1">
+                            <div class="img-cart"><img th:src="@{/Assets_Web/img/340x420.png}" class="img-responsive" alt="img-holiwood"></div>
+                            <div class="info-cart">
+                                <h1>Pink roses</h1>
+                                <span class="number">x1</span>
+                                <span class="prince-cart">$207.2</span>
+                            </div>
+                        </div>
+                        <div class="cart-1">
+                            <div class="img-cart"><img th:src="@{/Assets_Web/img/340x420.png}" class="img-responsive" alt="img-holiwood"></div>
+                            <div class="info-cart">
+                                <h1>Eleganr by BloomNation</h1>
+                                <span class="number">x1</span>
+                                <span class="prince-cart">$207.2</span>
+                            </div>
+                        </div>
+                        <div class="cart-1">
+                            <div class="img-cart"><img src="img/340x420.png" class="img-responsive" alt="img-holiwood"></div>
+                            <div class="info-cart">
+                                <h1>Queen Rose - Yellow</h1>
+                                <span class="number">x1</span>
+                                <span class="prince-cart">$207.2</span>
+                            </div>
+                        </div>
+                        <div class="total">
+                            <span>Total:</span>
+                            <span>$621.6</span>
+                        </div>
+                        <div id="div-cart-menu">
+                            <a href="#">ADD TO CART</a>
+                            <a href="#" class="check">CHECK VIEW</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-header mobile-menu">
+            <button type="button" class="navbar-toggle btn-menu-mobile" data-toggle="collapse" data-target="#myNavbar">
+                <i class="fas fa-bars"></i>                 
+            </button>
+        </div>
+    </div>
+
+</header>
+
+<footer th:fragment="footer"  >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 logo-footer">
+                <a href="#" class="logo-bot"></a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 copy">
+                <span>Copyright</span><i class="far fa-copyright"></i><span>[[${#dates.format(#dates.createNow(), 'yyyy')}]] by Sara Acuña</span>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 gmail-footer">
+                <span id="gmail-footer"><a href="#">E: Arcoirisshop@gmail.com</a></span>
+            </div>
+        </div>
+    </div>
+    <div class="hidden-lg hidden-md back-to-top fade"><i class="fas fa-caret-up"></i></div>
+    <div class="BG-menu"></div>
+</footer>

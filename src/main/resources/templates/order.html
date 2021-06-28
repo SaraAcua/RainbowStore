@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Order Completed</title>
+        <meta charset="utf-8">
+            <!-- bootstrap vs fontawesome-->
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                    <link rel="icon" href="img/favicon.png" type="image/x-icon"/>
+                    <link rel="stylesheet" type="text/css"  th:href="@{/Assets_Web/sass/css/style-about.css}">
+                        <link rel="stylesheet" type="text/css"  th:href="@{/Assets_Web/sass/css/style-res-about.css}">
+                            <link rel="stylesheet" type="text/css"  th:href="@{/Assets_Web/sass/css/style-faq.css}">
+                                <link rel="stylesheet" type="text/css"  th:href="@{/Assets_Web/sass/css/style-order.css}">
+                                    <link rel="stylesheet" type="text/css"  th:href="@{/Assets_Web/sass/css/style-fix-nav.css}">
+                                        <link rel="stylesheet" type="text/css"  th:href="@{/Assets_Web/sass/css/style-form-search-mobile.css}">
+                                            <!-- slick -->
+
+                                            <!-- GG FONT -->
+                                            <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+                                                <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700" rel="stylesheet">
+                                                    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+                                                        </head>
+                                                        <body>
+                                                            <style  th:replace="Fragment_App/fragments_app::icon_whatsaapp"></style>
+                                                            <div th:replace="Fragment_App/fragments_app::icon_what_msg" ></div>
+
+
+                                                            <!-- Header fragment -->
+                                                            <header th:replace="Fragment_App/fragments_app::header_app2"></header>
+                                                            <main>
+                                                                <div class="content-search">
+
+
+
+                                                                </div>
+                                                                <div class="banner">
+                                                                    <div class="container">
+                                                                        <figure id="banner-about"><a href="#"><img th:src="@{/Assets_Web/img/1350x500.png}" class="img-responsive" alt="img-holiwood"></a></figure>
+                                                                        <div class="title-banner">
+                                                                            <h1>Compras completadas</h1>
+                                                                            <p><a href="#" title="Home">Inicio</a><i class="fa fa-caret-right"></i>Compra completadas</p>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="row head-cart">
+                                                                    <div class="col-md-4 space-30">
+                                                                        <div class="item active center">
+                                                                            <p class="icon">01</p>
+                                                                            <h3>Carrito de compra</h3>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- End col-md-4 -->
+                                                                    <div class="col-md-4 space-30">
+                                                                        <div class="item center">
+                                                                            <p class="icon">02</p>
+                                                                            <h3>Check out</h3>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- End col-md-4 -->
+                                                                    <div class="col-md-4 space-30">
+                                                                        <div class="item center">
+                                                                            <p class="icon">03</p>
+                                                                            <h3>Compras completadas</h3>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- End col-md-4 -->
+                                                                </div>
+                                                                <!-- End container -->
+                                                                <div class="container container-ver2">
+                                                                    <div class="box float-left order-complete center space-50">
+                                                                        <div class="icon space-20">
+                                                                            <img th:src="@{/Assets_Web/img/icon-order-complete.png}" alt="icon">
+                                                                        </div>
+                                                                        <p class="box center space-50">Gracias por comprar con nosotros, ¡su pedido está completo!</p>
+                                                                        <div class="box">
+                                                                            <a class="link-v1 lh-50 margin-right-20 space-20 color-brand" th:href="@{/}" title="HOME PAGE">INICIO</a>
+                                                                            <a class="link-v1 lh-50 rt space-20" th:href="@{/shop}" title="CONTINUS SHOPPING">CONTINUAR COMPRANDO</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- End container -->
+
+                                                            </main>
+                                                            <footer th:replace="Fragment_App/fragments_app::footer"></footer>
+
+                                                            <!-- boostrap & jquery -->
+                                                            <script th:src="@{/Assets_Web/js/jquery.min_af.js}"></script>
+                                                            <script th:src="@{/Assets_Web/js/bootstrap.min_0028.js}"></script>
+
+                                                            <!-- js file -->
+                                                            <script th:src="@{/Assets_Web/js/function-back-top.js}"></script>
+                                                            <script th:src="@{/Assets_Web/js/function-sidebar.js}"></script>
+                                                            <script th:src="@{/Assets_Web/js/funtion-header-v3.js}"></script>
+                                                            <script th:src="@{/Assets_Web/js/function-search-v2.js}"></script>
+                                                            <script th:src="@{/Assets_Web/js/function-shopping-cart.js}"></script>
+                                                        </body>
+                                                        </html>

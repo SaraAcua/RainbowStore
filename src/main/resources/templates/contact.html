@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Contact</title>
+        <meta charset="utf-8">
+            <!-- bootstrap vs fontawesome-->
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                    <link rel="icon" th:href="@{/Assets_Web/img/favicon.png}" type="image/x-icon"/>
+                    <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-contact.css}">
+                        <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-res-contact.css}">
+                            <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-fix-nav.css}">
+                                <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-form-search-mobile.css}">
+                                    <!-- slick -->
+
+                                    <!-- GG FONT -->
+                                    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+                                        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700" rel="stylesheet">
+                                            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+                                                </head>
+                                                <body>
+                                                    <style  th:replace="Fragment_App/fragments_app::icon_whatsaapp"></style>
+                                                    <div th:replace="Fragment_App/fragments_app::icon_what_msg" ></div>
+
+
+                                                    <!-- Header fragment -->
+                                                    <header th:replace="Fragment_App/fragments_app::header_app2"></header>
+
+                                                    <main>
+                                                        <div class="content-search">
+
+                                                            <div class="container container-100">
+                                                                <i class="far fa-times-circle" id="close-search"></i>
+                                                                <h3 class="text-center">what are your looking for ?</h3>
+                                                                <form method="get" action="/search" role="search" style="position: relative;">
+                                                                    <input type="text" class="form-control control-search" value="" autocomplete="off" placeholder="Enter Search ..." aria-label="SEARCH" name="q">
+
+                                                                        <button class="button_search" type="submit">search</button>
+                                                                </form>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="banner">
+                                                            <div class="container">
+                                                                <figure id="banner-about"><a href="#"><img th:src="@{/Assets_Web/img/1350x500.png}" class="img-responsive" alt="img-holiwood"></a></figure>
+                                                                <div class="title-banner">
+                                                                    <h1>Nuestro Contacto</h1>
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="img-link">
+                                                            <div class="container">
+                                                                <div class="row">
+                                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                                                        <div class="img-color-1">
+                                                                            <div class="img-content">
+                                                                                <img th:src="@{/Assets_Web/img/50x70.png}" class="img-responsive" alt="img-holiwood">
+                                                                            </div>
+                                                                            <h1>Direccion</h1>
+                                                                            <h2>123 canberra, Bogota, Colombia.</h2>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                                                        <div class="img-color-2">
+                                                                            <div class="img-content">
+                                                                                <img th:src="@{/Assets_Web/img/62x61.png}" class="img-responsive" alt="img-holiwood">
+                                                                            </div>
+                                                                            <h1>Telefono</h1>
+                                                                            <h2>Office: 321 5754862</h2>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                                        <div class="img-color-3">
+                                                                            <div class="img-content">
+                                                                                <img th:src="@{/Assets_Web/img/77x60.png}" class="img-responsive" alt="img-holiwood">
+                                                                            </div>
+                                                                            <h1>Email </h1>
+                                                                            <h2>Contacto@arcoiris.org</h2>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="message">
+                                                            <div class="container">
+                                                                <div class="row">
+                                                                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                                                        <figure id="img-contact"><a href="#"><img th:src="@{/Assets_Web/img/enviar.png}" class="img-responsive" alt="img-holiwood"></a></figure>
+                                                                    </div>
+                                                                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 message-contact">
+                                                                        <h1>Envianos un mensaje</h1>
+                                                                        <form class="form-group" action="form" method="post">
+                                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                <label for="name-ip">Nombre<span>*</span></label><br>
+                                                                                    <input type="text" name="input-name" id="name-ip" class="input-lg form-control" placeholder="Nombre">
+                                                                                        </div>
+                                                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                            <label for="mail-ip">Email<span>*</span></label><br>
+                                                                                                <input type="text" name="input-mail" id="mail-ip" class="input-lg form-control" placeholder="Email">
+                                                                                                    </div>
+                                                                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                                                        <label>¿Qué tienes en mente?<span>*</span></label>
+                                                                                                        <textarea placeholder="Write your message here..." class="form-control"></textarea>
+                                                                                                    </div>
+                                                                                                    <button type="submit">Enviar mensaje</button>
+                                                                                                    </form>
+
+
+                                                                                                    </div>
+                                                                                                    </div>
+                                                                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div id="map">
+
+                                                                                                    </div>
+                                                                                                    <footer th:replace="Fragment_App/fragments_app::footer"></footer>
+                                                                                                    </main>
+
+
+                                                                                                    <!-- boostrap & jquery -->
+                                                                                                    <script th:src="@{/Assets_Web/js/jquery.min_af.js}"></script>
+                                                                                                    <script th:src="@{/Assets_Web/js/bootstrap.min_0028.js}"></script>
+
+                                                                                                    <!-- js file -->
+                                                                                                    <script th:src="@{/Assets_Web/js/function-map.js}"></script>
+                                                                                                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnMr64OtHBrpxBLLbYX2K2Waf4enq8sp0&callback"></script>
+                                                                                                    <script th:src="@{/Assets_Web/js/function-back-top.js}"></script>
+                                                                                                    <script th:src="@{/Assets_Web/js/function-sidebar.js}"></script>
+                                                                                                    <script th:src="@{/Assets_Web/js/funtion-header-v3.js}"></script>
+                                                                                                    <script th:src="@{/Assets_Web/js/function-search-v2.js}"></script>
+                                                                                                    </body>
+                                                                                                    </html>

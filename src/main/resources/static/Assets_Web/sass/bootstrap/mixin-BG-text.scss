@@ -1,0 +1,8 @@
+@mixin clip-text($url,$x){
+    /* Color fallback */
+    color: #fff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+   background-image: url($url);
+   background-position: $x;
+}

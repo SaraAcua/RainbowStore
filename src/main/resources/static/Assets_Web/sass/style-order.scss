@@ -1,0 +1,100 @@
+/*------------------------------------
+    [Table of contents]
+    1. Body
+    2. Header / #header
+    3. Navigation / #navbar
+    4. Content / #content
+    5. Sidebar / #sidebar
+    6. Search / #search
+    7. Footer / #footer
+    
+--------------------------------------*/
+@import 'bootstrap/mixin';
+.space-padding-tb-30{
+	padding-top: 30px !important;
+    padding-bottom: 30px !important;
+}
+.cart-box-container{
+	.col-md-4{
+		padding-right: 0px;
+		&:last-child{padding-right:15px;}
+	}
+}
+
+.head-cart{
+	.item{
+		border: 1px solid #ebebeb;
+    	padding: 60px 0px;
+    	&.active{
+    		.icon{
+    			background: #222;
+    			color: #fff;
+    			border-color: #222;
+    		}
+    	}
+    	.icon{
+    			font: 400 22px/64px "Poppins";
+    			display: inline-block;
+    			width: 66px;
+    			height: 66px;
+    			border-radius: 50%;
+    			border: 1px solid #c2c2c2;
+    			background: #fff;
+    			color: #565656;
+    		}
+    		h3{
+    			font: 400 24px/30px "Poppins";
+    			color: #565656;
+    			text-transform: uppercase;
+    			margin-top: 25px;
+    			margin-bottom: 10px;
+    			padding-bottom: 20px;
+    			position: relative;
+    			&:after{
+    				position: absolute;
+    				content: '';
+    				bottom: 0px;
+    				left: 0px;
+    				right: 0px;
+    				margin: auto;
+    				height: 1px;
+    				width: 75px;
+    				background: #222;
+    			}
+    		}
+	}
+}
+.center{
+	text-align: center;
+}
+.space-20{
+        margin-bottom: 20px !important;
+}
+.space-50{
+     margin-bottom: 50px !important;
+}
+.order-complete{
+    p{
+        font: 300 30px "Poppins";
+        color: #333;
+    }
+}
+.link-v1{
+   
+    font: 700 16px/38px "Abril Fatface";
+    color: #fff;
+    width: 180px;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid #e4e4e4;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+    background: #222;
+    &.lh-50{
+        line-height: 48px;
+        width: auto;
+        padding: 0 25px;
+        margin-right: 20px;
+    }
+     @include btn-shopnow;
+}

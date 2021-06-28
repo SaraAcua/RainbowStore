@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.o">
+    <head>
+        <title>Arcoiris</title>
+        <meta charset="utf-8">
+            <!-- bootstrap vs fontawesome-->
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                    <link rel="icon" th:href="@{/Assets_Web/img/favicon.png}" type="image/x-icon"/>
+                    <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-about.css}">
+                        <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-res-about.css}">
+                            <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-fix-nav.css}">
+                                <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-form-search-mobile.css}">
+                                    <!-- slick -->
+
+                                    <!-- GG FONT -->
+                                    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+                                        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700" rel="stylesheet">
+                                            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+                                                </head>
+                                                <body>
+                                                    
+                                                    <style  th:replace="Fragment_App/fragments_app::icon_whatsaapp"></style>
+                                                    <div th:replace="Fragment_App/fragments_app::icon_what_msg" ></div>
+
+
+                                                    <!-- Header fragment -->
+                                                   <header th:replace="Fragment_App/fragments_app::header_app2"></header>
+
+                                                    <main>
+                                                        <div class="content-search">
+
+                                                            <div class="container container-100">
+                                                                <i class="far fa-times-circle" id="close-search"></i>
+                                                                <h3 class="text-center">what are your looking for ?</h3>
+                                                                <form method="get" action="/search" role="search" style="position: relative;">
+                                                                    <input type="text" class="form-control control-search" value="" autocomplete="off" placeholder="Enter Search ..." aria-label="SEARCH" name="q">
+
+                                                                        <button class="button_search" type="submit">search</button>
+                                                                </form>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="banner">
+                                                            <div class="container">
+                                                                <figure id="banner-about"><a href="#"><img th:src="@{/Assets_Web/img/1350x500.png}" class="img-responsive" alt="img-holiwood"></a></figure>
+                                                                <div class="title-banner">
+                                                                    <h1>Sobre Nosotros</h1>
+                                                                    <p>It is a long established fact that a reader will<br>be distracted by the readable content of a page when looking at its layout</p>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="wellcome">
+                                                            <div class="container">
+                                                                <div class="row">
+                                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-well">
+                                                                        <div class="media">
+                                                                            <div class="media-left"><a href="#"><img th:src="@{/Assets_Web/img/115x115Y.png}" alt="img-holiwood"></a></div>
+                                                                            <div class="media-body">
+                                                                                <h1>Bienvenidos</h1>
+                                                                                <h2>Hola! Yo soy Sara Acuña <br>Fundadora de Arcoiris</h2>
+                                                                            </div>
+
+
+                                                                        </div>
+                                                                        <p >Arcoiris nace de la promesa biblica hablada, el arcoíris es también llamado
+                                                                            "arco de la alianza" o "arco de Dios". ...
+                                                                            Dice Dios: "Esta es la señal de la alianza
+                                                                            que establezco entre vosotros y yo, y con
+                                                                            todo ser vivo que esté con vosotros, para
+                                                                            generaciones perpetuas: pongo mi arco en
+                                                                            las nubes, que servirá de señal de la
+                                                                            alianza entre la tierra y yo. 
+
+                                                                            Creemos en la promesa y nuestra empresa
+                                                                            esta ispirada en ella.</p>
+                                                                        <div class="social-well">
+                                                                            <span>SOCIAL:</span>
+                                                                             <a href="https://instagram.com/arcoiris.shp?utm_medium=copy_link" id="link-insta2"><img style="border:2px;margin:2px;float:right;width:50px;" th:src="@{/Assets_Web/img/instagram (1).png}"></a>
+                                                                            <a href="https://www.facebook.com/Mo%C3%B1os-Arcoiris-2171299293132636/" id="link-fb2"><img style="border:2px;margin:0px;float:left;width:53px;" th:src="@{/Assets_Web/img/facebook.png}"></a>
+                                                                            <a href="#" id="link-tw2"><img style="border:2px;margin:20px;float:left;width:53px;" th:src="@{/Assets_Web/img/whatsapp.png}"></a></a>
+                                                                            <a href="#" id="link-sky2"></a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 img-well">
+                                                                        <figure id="img-about"><a href="#"><img th:src="@{/Assets_Web/img/660x360.png}" alt="img-holiwood"></a></figure>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--<div class="team">
+                                                        
+                                                        <!--<div class="container">
+                                                                <h1>Meet our team</h1>
+                                                                <h3>Profestional and  Outstanding Ideas of our passlonate team makes us unique in every sense</h3>
+                                                                <div class="row">
+                                                                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 team-account">
+                                                                                <a href="#"><img src="img/315x400.png" class="img-responsive" alt="img-holiwood"></a>
+                                                                                <div class="title-acc">
+                                                                                        <h2>LILA SIMPSON</h2>
+                                                                                        <p>Stylist</p>
+                                                                                        <div class="social-acc">
+                                                                                                <a href="#" class="link-gmail-acc"></a>
+                                                                                                <a href="#" class="link-fb-acc"></a>
+                                                                                                <a href="#" class="link-in-acc"></a>
+                                                                                                <a href="#" class="link-insta-acc"></a>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+                                                                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 team-account">
+                                                                                <a href="#"><img src="img/315x400.png" class="img-responsive" alt="img-holiwood"></a>
+                                                                                <div class="title-acc">
+                                                                                        <h2>JOHNSON SMITH</h2>
+                                                                                        <p>Fashion Designer</p>
+                                                                                        <div class="social-acc">
+                                                                                                <a href="#" class="link-gmail-acc"></a>
+                                                                                                <a href="#" class="link-fb-acc"></a>
+                                                                                                <a href="#" class="link-in-acc"></a>
+                                                                                                <a href="#" class="link-insta-acc"></a>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+                                                                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 team-account">
+                                                                                <a href="#"><img src="img/315x400.png" class="img-responsive" alt="img-holiwood"></a>
+                                                                                <div class="title-acc">
+                                                                                        <h2>BARNEY MOLLY</h2>
+                                                                                        <p>Stylist</p>
+                                                                                        <div class="social-acc">
+                                                                                                <a href="#" class="link-gmail-acc"></a>
+                                                                                                <a href="#" class="link-fb-acc"></a>
+                                                                                                <a href="#" class="link-in-acc"></a>
+                                                                                                <a href="#" class="link-insta-acc"></a>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+                                                                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 team-account">
+                                                                                <a href="#"><img src="img/315x400.png" class="img-responsive" alt="img-holiwood"></a>
+                                                                                <div class="title-acc">
+                                                                                        <h2>JUDY WINTER</h2>
+                                                                                        <p>Model</p>
+                                                                                        <div class="social-acc">
+                                                                                                <a href="#" class="link-gmail-acc"></a>
+                                                                                                <a href="#" class="link-fb-acc"></a>
+                                                                                                <a href="#" class="link-in-acc"></a>
+                                                                                                <a href="#" class="link-insta-acc"></a>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+                                                
+                                                                </div><!-- end row -->
+
+                                                        <!--</div>
+                                                </div>
+                                                        <!-- ------------------------- -->
+
+
+                                                       <!-- <div class="feedback">
+                                                            <div class="container">
+                                                                <h1>Los clientes dicen</h1>
+                                                                <h2>,,</h2>
+                                                                <div id="myCarousel1" class="carousel slide" data-ride="carousel">
+                                                                    <!-- Indicators 
+                                                                    <ol class="carousel-indicators">
+                                                                        <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
+                                                                        <li data-target="#myCarousel1" data-slide-to="1"></li>
+                                                                        <li data-target="#myCarousel1" data-slide-to="2"></li>
+                                                                    </ol>
+
+                                                                    <!-- Wrapper for slides 
+                                                                    <div class="carousel-inner">
+                                                                        <div class="item active">
+                                                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,<br class="hidden-sm hidden-xs"> when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap<br class="hidden-sm hidden-xs"> into electronic typesetting, remaining essentially unchanged</p>
+                                                                                        <div class="img-customer">
+                                                                                            <img th:src="@{/img/115x115.png}" alt="img-holiwood">
+                                                                                                <h1>JUDY BEAUTY - <span>Cliente</span></h1>
+                                                                                        </div>
+                                                                                        </div>
+
+                                                                                        <div class="item">
+
+                                                                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,<br class="hidden-sm hidden-xs"> when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap<br class="hidden-sm hidden-xs"> into electronic typesetting, remaining essentially unchanged</p>
+                                                                                                        <div class="img-customer">
+                                                                                                            <img src="img/115x115.png" alt="img-holiwood">
+                                                                                                                <h1>JUDY BEAUTY - <span>Customers</span></h1>
+                                                                                                        </div>
+                                                                                                        </div>
+
+                                                                                                        <div class="item">
+
+                                                                                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,<br class="hidden-sm hidden-xs"> when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap<br class="hidden-sm hidden-xs"> into electronic typesetting, remaining essentially unchanged</p>
+                                                                                                                        <div class="img-customer">
+                                                                                                                            <img src="img/115x115.png" alt="img-holiwood">
+                                                                                                                                <h1>JUDY BEAUTY - <span>Customers</span></h1>
+                                                                                                                        </div>
+                                                                                                                        </div>
+                                                                                                                        </div>
+
+                                                                                                                        </div>		
+                                                                                                                        </div>
+                                                                                                                        </div>-->
+                                                                                                                        <div class="img-link">
+                                                                                                                            <div class="container">
+                                                                                                                                <div class="row">
+                                                                                                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                                                                                                                        <div class="img-color-1">
+                                                                                                                                            <div class="img-content">
+                                                                                                                                                <img th:src="@{/Assets_Web/img/calidad.png}" class="img-responsive" alt="img-holiwood">
+                                                                                                                                            </div>
+                                                                                                                                            <h1>100%</h1>
+                                                                                                                                            <h2>Protección de la calidad</h2>
+                                                                                                                                        </div>
+
+                                                                                                                                    </div>
+                                                                                                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                                                                                                                        <div class="img-color-2">
+                                                                                                                                            <div class="img-content">
+                                                                                                                                                <img th:src="@{/Assets_Web/img/enviado.png}" class="img-responsive" alt="img-holiwood">
+                                                                                                                                            </div>
+                                                                                                                                            <h1>100%</h1>
+                                                                                                                                            <h2>Protección de pago</h2>
+                                                                                                                                        </div>
+
+                                                                                                                                    </div>
+                                                                                                                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                                                                                                        <div class="img-color-3">
+                                                                                                                                            <div class="img-content">
+                                                                                                                                                <img th:src="@{/Assets_Web/img/protegido.png}" class="img-responsive" alt="img-holiwood">
+                                                                                                                                            </div>
+                                                                                                                                            <h1>100%</h1>
+                                                                                                                                            <h2>Protección de envío a tiempo</h2>
+                                                                                                                                            
+                                                                                                                                        </div>
+
+                                                                                                                                    </div>
+
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                       
+                                                                                                                        </main>
+                                                                                                                   <footer th:replace="Fragment_App/fragments_app::footer"></footer>
+
+                                                                                                                        <!-- boostrap & jquery -->
+                                                                                                                        <script src="@{/Assets_Webjs/jquery.min_af.js}"></script>
+                                                                                                                        <script src="@{/Assets_Webjs/bootstrap.min_0028.js}"></script>
+
+                                                                                                                        <!-- js file -->
+                                                                                                                        <script src="@{/Assets_Webjs/function-back-top.js}"></script>
+                                                                                                                        <script src="@{/Assets_Webjs/function-sidebar.js}"></script>
+                                                                                                                        <script src="@{/Assets_Webjs/funtion-header-v3.js}"></script>
+                                                                                                                        <script src="@{/Assets_Webjs/function-search-v2.js}"></script>
+                                                                                                                        </body>
+                                                                                                                        </html>

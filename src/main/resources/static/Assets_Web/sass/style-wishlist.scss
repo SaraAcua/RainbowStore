@@ -1,0 +1,41 @@
+/*------------------------------------
+	[Table of contents]
+	1. Body
+	2. Header / #header
+	3. Navigation / #navbar
+	4. Content / #content
+	5. Sidebar / #sidebar
+	6. Search / #search
+	7. Footer / #footer
+	
+--------------------------------------*/
+@import 'bootstrap/mixin';
+@import "bootstrap/mixin-style-search";
+.table{
+	@include font-face(Poppins,14px,400);
+	a{@include btn-shopnow;}
+	tbody{
+		tr{
+			&.active{
+				td{@include font-face(Poppins,18px,500);}
+			}
+			td{
+		border: 0;
+		padding: 15px 15px 15px 0;
+		vertical-align: middle;
+		img{float: left;}
+		h1{@include font-face(Poppins,20px,500);padding-bottom: 10px;}
+		&.td-prince{@include font-face(Poppins,18px,600);color: black; }
+		&.td-icon-in{
+			i{color: red;font-size: 18px;padding-right: 5px;}
+			@include font-face(Poppins,18px,600);color: red;
+		}
+		&.td-icon-out{
+			i{font-size: 18px;}
+			@include font-face(Poppins,18px,600);
+		}
+		}
+		}
+	}
+	
+}

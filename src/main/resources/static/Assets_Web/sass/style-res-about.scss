@@ -1,0 +1,59 @@
+/*------------------------------------
+	[Table of contents]
+	1. Body
+	2. Header / #header
+	3. Navigation / #navbar
+	4. Content / #content
+	5. Sidebar / #sidebar
+	6. Search / #search
+	7. Footer / #footer
+	
+--------------------------------------*/
+@import "bootstrap/mixin-header-v3";
+@import "bootstrap/mixin-back-top";
+@import "style-res-contact";
+@import "bootstrap/mixin-style-search";
+@media (max-width: 991px){
+	.wellcome{
+		p{padding: 0 0 20px 0;}
+		.media{
+			.media-body{
+				h2{font-size: 24px;}
+			}
+		}
+	}
+	.team{
+		.team-account{padding-bottom: 30px;}
+	}
+}
+@media (max-width: 567px){
+	.wellcome{
+		.media{
+			.media-body{
+				h2{font-size: 20px;}
+			}
+		}
+	}
+	.team{
+		h1{font-size: 50px;}
+	}
+	.feedback{
+		h1{font-size: 50px;}
+		h2{font-size: 170px;margin: 26px 0 -100px 0;}
+	}
+	.img-link{
+		padding-bottom: 40px;
+	}
+	.info-footer{
+		padding: 40px 0;
+	}
+}
+@media (max-width: 567px){
+	.team{
+		h1{font-size: 36px;}
+	}
+	.feedback{
+		h1{font-size: 36px;}
+		h2{font-size: 150px;}
+	}
+}

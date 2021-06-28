@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Wishlist</title>
+        <meta charset="utf-8">
+            <!-- bootstrap vs fontawesome-->
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                    <link rel="icon" th:href="@{/Assets_Web/img/favicon.png}" type="image/x-icon"/>
+                    <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-about.css}">
+                        <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-res-about.css}">
+                            <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-faq.css}">
+                                <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-shopping.css}">
+                                    <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-fix-nav.css}">
+                                        <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-form-search-mobile.css}">
+                                            <!-- slick -->
+
+                                            <!-- GG FONT -->
+                                            <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+                                                <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700" rel="stylesheet">
+                                                    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+                                                        </head>
+                                                        <body>
+                                                            <style  th:replace="Fragment_App/fragments_app::icon_whatsaapp"></style>
+                                                            <div th:replace="Fragment_App/fragments_app::icon_what_msg" ></div>
+
+
+                                                            <!-- Header fragment -->
+                                                            <header th:replace="Fragment_App/fragments_app::header_app2"></header>
+                                                            <main>
+                                                                <div class="content-search">
+
+                                                                    <div class="container container-100">
+                                                                        <i class="far fa-times-circle" id="close-search"></i>
+                                                                        <h3 class="text-center">what are your looking for ?</h3>
+                                                                        <form method="get" action="/search" role="search" style="position: relative;">
+                                                                            <input type="text" class="form-control control-search" value="" autocomplete="off" placeholder="Enter Search ..." aria-label="SEARCH" name="q">
+
+                                                                                <button class="button_search" type="submit">search</button>
+                                                                        </form>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="banner">
+                                                                    <div class="container">
+                                                                        <figure id="banner-about"><a href="#"><img th:src="@{/Assets_Web/img/1350x500.png}" class="img-responsive" alt="img-holiwood"></a></figure>
+                                                                        <div class="title-banner">
+                                                                            <h1>Lista de deseos</h1>
+                                                                            <p><a th:href="@{/}" title="Home">Inicio</a><i class="fa fa-caret-right"></i>Lista de deseos</p>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="cart-box-container">
+
+                                                                    <div class="container container-ver2">
+                                                                        <div class="box cart-container">
+                                                                            <table class="table cart-table space-30">
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th class="product-photo">Nombre del producto</th>
+                                                                                        <th class="produc-name"></th>
+                                                                                        <th class="produc-price">Precio</th>
+                                                                                        <th class="product-quantity">Stock </th>
+                                                                                        <th class="total-price">Añadir al carrito</th>
+                                                                                        <th class="product-remove"></th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr class="item_cart">
+                                                                                        <td class="product-photo"><img th:src="@{/Assets_Web/img/340x420.png}" alt="Futurelife"></td>
+                                                                                        <td class="produc-name"><a href="#" title="">Eleganr by BloomNation</a></td>
+                                                                                        <td class="produc-price"><input value="$69.90" size="4" type="text"></td>
+                                                                                        <td class="product-in"><i class="fas fa-check-circle"></i> In Stock</td>
+                                                                                        <td class="add-to-cart"><a href="#" class="btn-shop">SHOP NOW</a></td>
+                                                                                        <td class="product-remove"><a class="remove" href="#" title="close"><img th:src="@{/Assets_Web/img/icon-delete-cart.png}" alt="close"></a></td>
+                                                                                    </tr>
+                                                                                    <tr class="item_cart">
+                                                                                        <td class="product-photo"><img th:src="@{/Assets_Web/img/340x420.png}" alt="Futurelife"></td>
+                                                                                        <td class="produc-name"><a href="#" title="">Pink roses</a></td>
+                                                                                        <td class="produc-price"><input value="$51.59" size="4" type="text"></td>
+                                                                                        <td class="product-in"><i class="fas fa-check-circle"></i> In Stock</td>
+                                                                                        <td class="add-to-cart"><a href="#" class="btn-shop">SHOP NOW</a></td>
+                                                                                        <td class="product-remove"><a class="remove" href="#" title="close"><img th:src="@{/Assets_Web/img/icon-delete-cart.png}" alt="close"></a></td>
+                                                                                    </tr>
+                                                                                    <tr class="item_cart">
+                                                                                        <td class="product-photo"><img th:src="@{/Assets_Web/img/340x420.png}" alt="Futurelife"></td>
+                                                                                        <td class="produc-name"><a href="#" title="">Fun & Flirty By BloomNation</a></td>
+                                                                                        <td class="produc-price"><input value="$51.59" size="4" type="text"></td>
+                                                                                        <td class="product-out"><i class="fas fa-check-circle"></i> Out Stock</td>
+                                                                                        <td class="add-to-cart"><a href="#" class="btn-shop">SHOP NOW</a></td>
+                                                                                        <td class="product-remove"><a class="remove" href="#" title="close"><img src="img/icon-delete-cart.png" alt="close"></a></td>
+                                                                                    </tr>
+                                                                                    <tr class="item_cart">
+                                                                                        <td class="product-photo"><img th:src="@{/Assets_Web/img/340x420.png}" alt="Futurelife"></td>
+                                                                                        <td class="produc-name"><a href="#" title="">Queen Rose - Pink</a></td>
+                                                                                        <td class="produc-price"><input value="$51.59" size="4" type="text"></td>
+                                                                                        <td class="product-out"><i class="fas fa-check-circle"></i> Out Stock</td>
+                                                                                        <td class="add-to-cart"><a href="#" class="btn-shop">SHOP NOW</a></td>
+                                                                                        <td class="product-remove"><a class="remove" href="#" title="close"><img th:src="@{/Assets_Web/img/icon-delete-cart.png}" alt="close"></a></td>
+                                                                                    </tr>
+                                                                                    <tr class="item_cart">
+                                                                                        <td class="product-photo"><img th:src="@{/Assets_Web/img/340x420.png}" alt="Futurelife"></td>
+                                                                                        <td class="produc-name"><a href="#" title="">Winter White Bouquet</a></td>
+                                                                                        <td class="produc-price"><input value="$51.59" size="4" type="text"></td>
+                                                                                        <td class="product-in"><i class="fas fa-check-circle"></i> In Stock</td>
+                                                                                        <td class="add-to-cart"><a href="#" class="btn-shop">SHOP NOW</a></td>
+                                                                                        <td class="product-remove"><a class="remove" href="#" title="close"><img th:src="@{/Assets_Web/img/icon-delete-cart.png}" alt="close"></a></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+
+
+
+                                                                        </div>
+                                                                        <!-- End container -->
+                                                                    </div>
+                                                                    <!-- End cat-box-container -->
+                                                                </div>
+
+                                                            </main>
+                                                            <footer>
+                                                                <div class="container">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 logo-footer">
+                                                                            <a href="#" class="logo-bot"></a>
+                                                                        </div>
+                                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 cop">
+                                                                            <span>Copyright</span><i class="far fa-copyright"></i><span>[[${#dates.format(#dates.createNow(), 'yyyy')}]] by Sara Acuña</span>
+                                                                        </div>
+                                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                                            <span id="gmail-footer"><a href="#">E: Arcoirisshop@gmail.com</a></span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="hidden-lg hidden-md back-to-top fade"><i class="fas fa-caret-up"></i></div>
+                                                                <div class="BG-menu"></div>
+                                                            </footer>
+
+                                                            <!-- boostrap & jquery -->
+                                                            <script src="js/jquery.min_af.js"></script>
+                                                            <script src="js/bootstrap.min_0028.js"></script>
+
+                                                            <!-- js file -->
+                                                            <script src="js/function-back-top.js"></script>
+                                                            <script src="js/function-sidebar.js"></script>
+                                                            <script src="js/funtion-header-v3.js"></script>
+                                                            <script src="js/function-search-v2.js"></script>
+                                                            <script src="js/function-shopping-cart.js"></script>
+                                                        </body>
+                                                        </html>

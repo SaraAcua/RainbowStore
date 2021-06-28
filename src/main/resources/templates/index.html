@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Arcoiris</title>
+        <meta charset="utf-8">
+            <!-- bootstrap vs fontawesome-->
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                    <link rel="icon" th:href="@{/Assets_Web/img/favicon.png}" type="image/x-icon"/>
+                    <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-homev1.css}">
+                        <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-res-v1.css}">
+                            <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-fix-nav.css}">
+                                <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-form-search-mobile.css}">
+                                    <!-- scroll -->
+
+
+                                    <!-- GG FONT -->
+                                    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+                                        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700" rel="stylesheet">
+                                            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+                                                </head>
+                                                <body>
+
+                                                    <style  th:replace="Fragment_App/fragments_app::icon_whatsaapp"></style>
+                                                    <div th:replace="Fragment_App/fragments_app::icon_what_msg" ></div>
+
+
+                                                    <!-- Header fragment -->
+                                                    <header th:replace="Fragment_App/fragments_app::header_app"></header>
+
+
+                                                    <main>
+                                                        <div class="content-search">
+
+                                                            <div class="container container-100">
+                                                                <i class="far fa-times-circle" id="close-search"></i>
+                                                                <h3 class="text-center">what are your looking for ?</h3>
+                                                                <form method="get" action="/search" role="search" style="position: relative;">
+                                                                    <input type="text" class="form-control control-search" value="" autocomplete="off" placeholder="Enter Search ..." aria-label="SEARCH" name="q">
+
+                                                                        <button class="button_search" type="submit">search</button>
+                                                                </form>
+                                                            </div>
+
+                                                        </div>
+                                                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                                            <!-- Indicators -->
+                                                            <ol class="carousel-indicators">
+                                                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                                                                <li data-target="#myCarousel" data-slide-to="3"></li>
+                                                            </ol>
+
+                                                            <!-- Wrapper for slides -->
+                                                            <div class="carousel-inner">
+
+                                                                <div class="item active slide-1">
+                                                                    <img th:src="@{Assets_Web/img/title1920x1080.png}" alt="img-holiwood">
+                                                                        <div class="carousel-caption">
+                                                                            <h3>UN DETALLE</h3>
+                                                                            <h1>Para las Princesas</h1>
+                                                                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
+                                                                            <img th:src="@{Assets_Web/img/310x26.png}" alt="img-holiwood"><br>
+                                                                                    <a href="#">Comprar ahora</a>
+                                                                                    </div>
+
+                                                                                    </div>
+
+                                                                                    <div class="item slide-2">
+                                                                                        <img th:src="@{Assets_Web/img/title21920x1080.png}" alt="img-holiwood">
+                                                                                            <div class="carousel-caption">
+                                                                                                <h3>Un Perfecto</h3>
+                                                                                                <h1>Accesorio</h1>
+                                                                                                <div class="line"></div>
+                                                                                                <p>It is a long established fact that a reader will be distracted by the redable content of a page when looking at its latout</p>
+                                                                                                <a href="#">Comprar ahora</a>
+                                                                                            </div>
+
+                                                                                    </div>
+
+                                                                                    <div class="item slide-1">
+                                                                                        <img th:src="@{Assets_Web/img/1920x1080.png}" alt="img-holiwood">
+                                                                                            <div class="carousel-caption">
+                                                                                                <h3>EXPLORE LAS</h3>
+                                                                                                <h1>Nuevas Colecciones</h1>
+                                                                                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
+                                                                                                <img th:src="@{Assets_Web/img/310x26.png}" alt="img-holiwood"><br>
+                                                                                                        <a href="#">Comprar ahora</a>
+                                                                                                        </div>
+
+                                                                                                        </div>
+
+                                                                                                        <div class="item slide-2">
+                                                                                                            <img th:src="@{Assets_Web/img/1920x1080L.png}" alt="img-holiwood">
+                                                                                                                <div class="carousel-caption">
+                                                                                                                    <h3>Elige </h3>
+                                                                                                                    <h1>tu favorito</h1>
+                                                                                                                    <div class="line"></div>
+                                                                                                                    <p>It is a long established fact that a reader will be distracted by the redable content of a page when looking at its latout</p>
+                                                                                                                    <a href="#">Comprar ahora</a>
+                                                                                                                </div>
+
+                                                                                                        </div>
+
+                                                                                                        </div>
+                                                                                                        </div>
+
+                                                                                                        <div class="who" id="showcase">
+                                                                                                            <div class="gallery clearfix">
+                                                                                                                <figure>
+                                                                                                                    <img th:src="@{Assets_Web/img/1820x1090.png}" alt="img-holiwood">
+                                                                                                                        <h1>Quienes somos ?</h1>
+                                                                                                                        <h1 class="h2">Quienes somos ?</h1>
+                                                                                                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has<br class="hidden-md hidden-sm hidden-xs">
+                                                                                                                                been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type<br class="hidden-md hidden-sm hidden-xs"> and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into<br class="hidden-md hidden-sm hidden-xs"> electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of <br class="hidden-md hidden-sm hidden-xs">
+                                                                                                                                            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing <br class="hidden-md hidden-sm hidden-xs">
+                                                                                                                                                software like Aldus PageMaker including versions of Lorem Ipsum
+                                                                                                                                                </p>
+                                                                                                                                                <div class="media"><div class="media-left"><img th:src="@{Assets_Web/img/sara.png}" id="avatar" class="media-object" alt="img-holiwood"/></div><div class="media-body"><h3>Sara Acuña</h3><span>Fundadora</span></div></div>
+                                                                                                                                                </figure>
+                                                                                                                                                </div>
+                                                                                                                                                </div>
+
+
+
+
+                                                                                                                                                </main>
+                                                                                                                                                <footer>
+                                                                                                                                                    <div class="container">
+                                                                                                                                                        <div class="row">
+                                                                                                                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 info-footer">
+                                                                                                                                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                                                                                                                                                                    <h3>Servicio al cliente</h3>
+                                                                                                                                                                    <ul>
+                                                                                                                                                                        <li><i class="fas fa-long-arrow-alt-right"></i><a href="#">Contàctenos</a></li>
+                                                                                                                                                                        <li><i class="fas fa-long-arrow-alt-right"></i><a href="#">Iniciar sesion/Registrarse</a></li>
+                                                                                                                                                                        <li><i class="fas fa-long-arrow-alt-right"></i><a href="#">Entrega y devoluciones</a></li>
+                                                                                                                                                                        <li><i class="fas fa-long-arrow-alt-right"></i><a href="#">Preguntas frecuentes</a></li>
+                                                                                                                                                                    </ul>
+                                                                                                                                                                </div>
+                                                                                                                                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                                                                                                                                                                </div>
+                                                                                                                                                                <div class="social-text"><span id="text-connect">CONECTATE CON NOSOTROS:</span>
+                                                                                                                                                                    <span class="social"><a href="#" id="instar"></a><a href="#" id="fb"></a><a href="#" id="tw"></a><a href="#" id="sky"></a></span>
+                                                                                                                                                                </div>
+                                                                                                                                                            </div>
+                                                                                                                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 new-letter">
+                                                                                                                                                                <div class="form-new">
+                                                                                                                                                                    <h1>Boletin Informativo</h1>
+                                                                                                                                                                    <p>Registese en nuestra lista de correos para recibir las ultimas actualizaciones y ofertas</p>
+                                                                                                                                                                    <form class="form-group">
+                                                                                                                                                                        <input type="text" name="input-mail" placeholder="Your mail here" class="form-control input-lg">
+                                                                                                                                                                            <button type="submit">Suscribir</button>
+                                                                                                                                                                    </form>
+                                                                                                                                                                </div>
+
+                                                                                                                                                            </div>
+                                                                                                                                                        </div>
+                                                                                                                                                    </div>
+                                                                                                                                                    <div class="footer-logo" style="height: 180px !important">
+                                                                                                                                                        <div class="row footer-row">
+                                                                                                                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                                                                                                                                <!--<a href="#" class="logo-bot"></a>-->
+                                                                                                                                                                <img th:src="@{Assets_Web/img/logo.png}" style="padding-top: 1px;" class="img-responsive"/>
+                                                                                                                                                            </div>
+                                                                                                                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 cop">
+                                                                                                                                                                <span>Copyright</span><i class="far fa-copyright"></i><span>[[${#dates.format(#dates.createNow(), 'yyyy')}]] by Sara Acuña</span>
+                                                                                                                                                            </div>
+                                                                                                                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                                                                                                                                <span id="gmail-footer"><a href="#">E: Arcoirisshop@gmail.com</a></span>
+                                                                                                                                                            </div>
+                                                                                                                                                        </div>
+                                                                                                                                                    </div>
+                                                                                                                                                    <div class="hidden-lg hidden-md back-to-top fade"><i class="fas fa-caret-up"></i></div>
+                                                                                                                                                    <div class="BG-menu"></div>
+                                                                                                                                                    <!-- Modal quick view -->
+                                                                                                                                                    <div id="myModal" class="modal fade" role="dialog">
+                                                                                                                                                        <div class="modal-dialog">
+
+                                                                                                                                                        </div>
+                                                                                                                                                        <!-- --------------------------- -->
+                                                                                                                                                </footer>
+
+                                                                                                                                                <!-- boostrap & jquery -->
+                                                                                                                                                <script th:src="@{/Assets_Web/js/jquery.min_af.js}"></script>
+                                                                                                                                                <script th:src="@{/Assets_Web/js/bootstrap.min_0028.js}"></script>
+                                                                                                                                                <!-- js file -->
+                                                                                                                                                <script th:src="@{/Assets_Web/js/function-homev1.js}"></script>
+                                                                                                                                                <script th:src="@{/Assets_Web/js/function-sidebar.js}"></script>
+                                                                                                                                                <script th:src="@{/Assets_Web/js/function-back-top.js}"></script>
+                                                                                                                                                <script th:src="@{/Assets_Web/js/function-select-custom.js}"></script>
+                                                                                                                                                <script th:src="@{/Assets_Web/js/function-search-v2.js}"></script>
+                                                                                                                                                <!-- scroll js -->
+                                                                                                                                                <script th:src="@{/Assets_Web/scrolling/TweenMax.min.js}"></script>
+                                                                                                                                                <script th:src="@{/Assets_Web/scrolling/jquery.superscrollorama.js}"></script>
+                                                                                                                                                <script th:src="@{/Assets_Web/js/function-scroll.js}"></script>
+
+                                                                                                                                                </body>
+                                                                                                                                                </html>

@@ -1,0 +1,14 @@
+.sidebar-hide {
+  display: none; }
+
+.content-flower-full {
+  width: 100%;
+  transition: all .3s ease; }
+
+.product-flower-col-3 {
+  width: 25%;
+  clear: none !important; }
+  .product-flower-col-3:nth-child(4n+1) {
+    clear: left !important; }
+
+/*# sourceMappingURL=mixin-show-sidebar.css.map */

@@ -1,0 +1,81 @@
+/*------------------------------------
+	[Table of contents]
+	1. Body
+	2. Header / #header
+	3. Navigation / #navbar
+	4. Content / #content
+	5. Sidebar / #sidebar
+	6. Search / #search
+	7. Footer / #footer
+	
+--------------------------------------*/
+@import "style-res-shop";
+@import "bootstrap/mixin-style-search";
+@media (max-width: 1399px){
+	.show-side{
+		width: 60%;
+	}
+	.show-select{
+		width: 40%;
+	}
+	.list-group-item{
+		margin-bottom: -2px;
+	}
+	.sidebar{
+		.list-4{
+			.list-item-4{
+				button{
+					margin-top: 25px;
+				}
+			}
+		}
+	}
+	figure{
+		&.bg-input{
+			&::before{bottom: 60px;}
+			&::after{bottom: 60px;}
+		}
+	}
+}
+@media (max-width: 1199px){
+	.show-side{
+		width: 66.66666667%;
+	}
+	.show-select{
+		width: 33.333333%;
+	}
+}
+@media (max-width: 991px){
+	.content{
+		.menu-breadcrumb{
+			.breadcrumb{padding: 20px 0 0 0;}
+	}
+	}
+	
+	.show-side{
+		width: 50%;
+	}
+	.show-select{
+		width: 50%;
+	}
+	.banner{
+		padding-bottom: 0;
+	}
+}
+@media (max-width: 568px){
+	.show-side{
+		width: 40%;
+	}
+	.show-select{
+		width: 60%;
+	}
+}
+@media (max-width: 567px){
+	.show-side{
+		width: 100%;
+	}
+	.show-select{
+		width: 100%;
+		padding: 20px 0 0 0;
+	}
+}

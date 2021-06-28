@@ -1,0 +1,59 @@
+/*------------------------------------
+    [Table of contents]
+    1. Body
+    2. Header / #header
+    3. Navigation / #navbar
+    4. Content / #content
+    5. Sidebar / #sidebar
+    6. Search / #search
+    7. Footer / #footer
+    
+--------------------------------------*/
+@import 'bootstrap/mixin';
+.order-tracking{
+	text-align: center;
+	p{
+		max-width: 900px;
+    	padding: 0 20px;
+    	font: 400 16px/30px "Poppins";
+    	margin: auto;
+    	margin-top: 40px;
+    	color: #565656;
+	}
+	.tracking-content{
+		width: 420px;
+    	max-width: 100%;
+    	margin: auto;
+    	padding: 40px 0px;
+    	margin-bottom: 80px;
+		.form-horizontal{
+			label{
+				&.control-label{
+					font: 400 18px/20px "Poppins";
+    				color: #000;
+    				text-align: center;
+    				text-transform: uppercase;
+    				margin-bottom: 20px;
+    				display: block;
+				}
+			}
+			a{@include btn-shopnow;}
+		}
+		.form-control{
+			border: 1px solid #ebebeb;
+    		font: 400 18px/50px "Poppins";
+    		height: 47px;
+    		display: block;
+    		width: 100%;
+    		border-radius: 0;
+    		color: #888888;
+    		padding: 9px 20px;
+		}
+	}
+}
+.space-40{
+	margin-bottom: 40px !important;
+}
+.space-20{
+	margin-bottom: 20px !important;
+}

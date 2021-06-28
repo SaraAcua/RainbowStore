@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.o">
+    <head>
+        <title>Login/Register</title>
+        <meta charset="utf-8">
+            <!-- bootstrap vs fontawesome-->
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                    <link rel="icon" href="img/favicon.png" type="image/x-icon"/>
+                    <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-about.css}">
+                        <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-res-about.css}">
+                            <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/Assets_Web/sass/css/style-faq.css}">
+                                <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-login.css}">
+                                    <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-fix-nav.css}">
+                                        <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-form-search-mobile.css}">
+                                            <!-- slick -->
+
+                                            <!-- GG FONT -->
+                                            <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+                                                <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700" rel="stylesheet">
+                                                    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+                                                        </head>
+                                                        <body>
+                                                            <style  th:replace="Fragment_App/fragments_app::icon_whatsaapp"></style>
+                                                            <div th:replace="Fragment_App/fragments_app::icon_what_msg" ></div>
+
+
+                                                            <!-- Header fragment -->
+                                                            <header th:replace="Fragment_App/fragments_app::header_app2"></header>
+                                                            <main>
+
+                                                                <div class="banner">
+                                                                    <div class="container">
+                                                                        <figure id="banner-about"><a href="#"><img th:src="@{/Assets_Web/img/1350x500.png}" class="img-responsive" alt="img-holiwood"></a></figure>
+                                                                        <div class="title-banner">
+                                                                            <h1>Iniciar sesion/ Registrarse</h1>
+                                                                            <p><a th:href="@{/}" title="Home">Inicio</a><i class="fa fa-caret-right"></i>Iniciar sesion/ Registrarse</p>
+              
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="container container-ver2">
+                                                                    <div class="page-login box space-50">
+                                                                        <div class="row">
+                                                                            <div class="col-md-6 sign-in space-30">
+                                                                                <h3>INICIAR SESIÓN</h3>
+                                                                                <p th:if="${status == 3}" class="text-danger">[[${msg}]]</p>
+                                                                                <p th:if="${status == 4}" class="text-success">[[${msg}]]</p>
+                                                                                <!-- End social -->
+                                                                                <form   th:method="post" class="form-horizontal" method="POST" th:action="@{/login}">
+                                                                                    <div class="group box space-20">
+                                                                                        <label class="control-label"  for="inputemail">DIRECCIÓN DE CORREO ELECTRÓNICO*</label>
+                                                                                        <input class="form-control" required=""  name="email" type="text" placeholder="Tu correo electronico" id="inputemail">
+                                                                                    </div>
+                                                                                    <div class="group box">
+                                                                                        <label class="control-label" for="inputemail">CONTRASEÑA*</label>
+                                                                                        <input class="form-control" required="" maxlength="20" name="password" type="password" placeholder="Tu contraseña" id="inputpass"> 
+                                                                                    </div>
+                                                                                    <div class="remember">
+                                                                                        <input id="remeber" type="checkbox" name="check" value="remeber">
+                                                                                            <label for="remeber" class="label-check">¡Recuérdame!</label>
+                                                                                            <a class="help" href="#" title="help ?">¿Recordar tu contraseña?</a>   
+                                                                                    </div>           
+                                                                                    <button type="submit" name="submit" class="link-v1 rt">INICIAR SESIÒN AHORA</button>
+                                                                                </form>
+                                                                                <!-- End form -->
+                                                                            </div>
+                                                                            <!-- End col-md-6 -->
+                                                                            <div class="col-md-6">
+                                                                                <div class="register box space-50">
+                                                                                    <h3>CREA UNA CUENTA NUEVA</h3>
+                                                                                    <p>Cree su propia cuenta.</p>
+                                                                                    <div th:if="${status == 1}"  style='text-aling:center;margin-top:2%' class='alert alert-success col-lg-12 col-sm-12' role='alert'>Te has registrado correctamente !!!</div>
+                                                                                    <div th:if="${status == 0}"  style='text-aling:center;margin-top:2%' class='alert alert-danger col-lg-12 col-sm-12' role='alert'>[[${msg}]]</div>
+                                                                                    <form th:method="post" th:object="${client}" class="form-horizontal"  method="POST" th:action="@{/client/save}">
+                                                                                        <div class="group box space-20">
+                                                                                            <label class="control-label" for="inputemailres">DIRECCIÓN DE CORREO ELECTRÓNICO*</label>
+                                                                                            <input required="" class="form-control" th:field="*{email}" type="text" placeholder="Tu correo electronico" id="inputemailres">
+                                                                                        </div>
+                                                                                        <div class="group box space-20">
+                                                                                            <label class="control-label" for="inputemailres">NOMBRES</label>
+                                                                                            <input required="" class="form-control" type="text" th:field="*{name}" maxlength="80" placeholder="NOMBRES" id="inputemailres">
+                                                                                        </div>
+                                                                                        <div class="group box space-20">
+                                                                                            <label class="control-label" for="inputemailres">APELLIDOS</label>
+                                                                                            <input required="" class="form-control" maxlength="80" type="text" th:field="*{lastName}" placeholder="APELLIDOS" id="inputemailres">
+                                                                                        </div>
+                                                                                        <div class="group box space-20">
+                                                                                            <label class="control-label" for="inputemailres">TELÉFONO</label>
+                                                                                            <input required="" class="form-control" maxlength="15" type="text" th:field="*{tel}" placeholder="TELÉFONO" id="inputemailres">
+                                                                                        </div>
+                                                                                        <div class="group box space-20">
+                                                                                            <label class="control-label"  for="inputemailres">CONTRASEÑA</label>
+                                                                                            <input required="" class="form-control" maxlength="10" type="password" th:field="*{password}" placeholder="Contraseña" id="inputemailres">
+                                                                                        </div>
+                                                                                        <button type="submit" class="link-v1 rt">Registrarse</button>
+                                                                                    </form>
+                                                                                </div>
+                                                                                <!-- End register -->
+
+                                                                            </div>
+                                                                            <!-- End col-md-6 -->
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </main>
+                                                                 <footer th:replace="Fragment_App/fragments_app::footer"></footer>
+
+                                                            <!-- boostrap & jquery -->
+                                                            <script th:src="@{/Assets_Web/js/jquery.min_af.js}"></script>
+                                                            <script src="@{/Assets_Web/js/bootstrap.min_0028.js}"></script>
+
+                                                            <!-- js file -->
+                                                            <script th:src="@{/Assets_Web/js/function-back-top.js}"></script>
+                                                            <script th:src="@{/Assets_Web/js/function-sidebar.js}"></script>
+                                                            <script th:src="@{/Assets_Web/js/funtion-header-v3.js}"></script>
+                                                            <script th:src="@{/Assets_Web/js/function-search-v2.js}"></script>
+                                                        </body>
+                                                        </html>

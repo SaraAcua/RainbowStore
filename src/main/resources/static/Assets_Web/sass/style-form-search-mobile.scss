@@ -1,0 +1,24 @@
+/*------------------------------------
+	[Table of contents]
+	1. Body
+	2. Header / #header
+	3. Navigation / #navbar
+	4. Content / #content
+	5. Sidebar / #sidebar
+	6. Search / #search
+	7. Footer / #footer
+	
+--------------------------------------*/
+@import 'bootstrap/mixin';
+@media (max-width: 991px){
+	.menu-mobile{
+		.form-search-mobile{
+			position: relative;
+			padding: 50px 20px 0 15px;
+			input{@include input-defaut;border-bottom: 1px solid #ddd;padding-left: 0px;
+				&::-webkit-input-placeholder{@include font-face(Poppins,14px,400);opacity: .5;}
+			}
+			button{@include btn-defaut(#fff);position: absolute;right: 20px;top: 55px;}
+		}
+	}
+}

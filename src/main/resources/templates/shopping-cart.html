@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="${name}"></title>
+        <meta charset="utf-8">
+            <!-- bootstrap vs fontawesome-->
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                    <link rel="icon" href="img/favicon.png" type="image/x-icon"/>
+                    <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-about.css}">
+                        <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-res-about.css}">
+                            <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-faq.css}">
+                                <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-shopping.css}">
+                                    <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-fix-nav.css}">
+                                        <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-form-search-mobile.css}">
+                                            <!-- slick -->
+
+                                            <!-- GG FONT -->
+                                            <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+                                                <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700" rel="stylesheet">
+                                                    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+                                                        </head>
+                                                        <body>
+                                                            <style  th:replace="Fragment_App/fragments_app::icon_whatsaapp"></style>
+                                                            <div th:replace="Fragment_App/fragments_app::icon_what_msg" ></div>
+
+
+                                                            <!-- Header fragment -->
+                                                            <header th:replace="Fragment_App/fragments_app::header_app2"></header>
+                                                            <main>
+
+
+                                                                <div class="banner">
+                                                                    <div class="container">
+                                                                        <figure id="banner-about"><a href="#"><img th:src="@{/Assets_Web/img/1350x500.png}" class="img-responsive" alt="img-holiwood"></a></figure>
+                                                                        <div class="title-banner">
+                                                                            <h1>Carrito de compra</h1>
+                                                                            <p><a href="#" title="Home">Inicio</a><i class="fa fa-caret-right"></i>Carrito de compra</p>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="cart-box-container">
+                                                                    <div class="container container-ver2 space-padding-tb-30">
+                                                                        <div class="row head-cart">
+                                                                            <div class="col-md-4 space-30">
+                                                                                <div class="item active center">
+                                                                                    <p class="icon">01</p>
+                                                                                    <h3>Carrito de compra</h3>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- End col-md-4 -->
+                                                                            <div class="col-md-4 space-30">
+                                                                                <div class="item center">
+                                                                                    <p class="icon">02</p>
+                                                                                    <h3>Check out</h3>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- End col-md-4 -->
+                                                                            <div class="col-md-4 space-30">
+                                                                                <div class="item center">
+                                                                                    <p class="icon">03</p>
+                                                                                    <h3>Compras completadas</h3>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- End col-md-4 -->
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- End container -->
+                                                                    <div class="container container-ver2">
+                                                                        <div class="box cart-container">
+                                                                            <table class="table cart-table space-30">
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th class="product-photo">Lista Productos</th>
+                                                                                        <th class="produc-name"></th>
+                                                                                        <th class="produc-price">Precio</th>
+                                                                                        <th class="product-quantity">Cantidad</th>
+                                                                                        <th class="total-price">Total</th>
+                                                                                        <th class="product-remove"></th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr class="item_cart">
+                                                                                        <td class="product-photo"><img th:src="@{/Assets_Web/img/340x420.png}" alt="Futurelife"></td>
+                                                                                        <td class="produc-name"><a href="#" title="">Eleganr by BloomNation</a></td>
+                                                                                        <td class="produc-price"><input value="$69.90" size="4" type="text"></td>
+                                                                                        <td class="product-quantity">
+                                                                                            <form enctype="multipart/form-data">
+                                                                                                <div class="product-signle-options product_15 clearfix">
+                                                                                                    <div class="selector-wrapper size">
+                                                                                                        <div class="quantity">
+                                                                                                            <input data-step="1" value="1" title="Qty" class="qty" size="4" type="text">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </form>
+                                                                                        </td>
+                                                                                        <td class="total-price"></td>
+                                                                                        <td class="product-remove"><a class="remove" href="#" title="close"><img th:src="@{/Assets_Web/img/icon-delete-cart.png}" alt="close"></a></td>
+                                                                                    </tr>
+                                                                                    <tr class="item_cart">
+                                                                                        <td class="product-photo"><img th:src="@{/Assets_Web/img/340x420.png}" alt="Futurelife"></td>
+                                                                                        <td class="produc-name"><a href="#" title="">Pink roses</a></td>
+                                                                                        <td class="produc-price"><input value="$51.59" size="4" type="text"></td>
+                                                                                        <td class="product-quantity">
+                                                                                            <form enctype="multipart/form-data">
+                                                                                                <div class="product-signle-options product_15 clearfix">
+                                                                                                    <div class="selector-wrapper size">
+                                                                                                        <div class="quantity">
+                                                                                                            <input data-step="1" value="2" title="Qty" class="qty" size="4" type="text">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </form>
+                                                                                        </td>
+                                                                                        <td class="total-price"></td>
+                                                                                        <td class="product-remove"><a class="remove" href="#" title="close"><img src="img/icon-delete-cart.png" alt="close"></a></td>
+                                                                                    </tr>
+                                                                                    <tr class="item_cart">
+                                                                                        <td class="product-photo"><img th:src="@{/Assets_Web/img/340x420.png}" alt="Futurelife"></td>
+                                                                                        <td class="produc-name"><a href="#" title="">Fun & Flirty By BloomNation</a></td>
+                                                                                        <td class="produc-price"><input value="$51.59" size="4" type="text"></td>
+                                                                                        <td class="product-quantity">
+                                                                                            <form enctype="multipart/form-data">
+                                                                                                <div class="product-signle-options product_15 clearfix">
+                                                                                                    <div class="selector-wrapper size">
+                                                                                                        <div class="quantity">
+                                                                                                            <input data-step="1" value="2" title="Qty" class="qty" size="4" type="text">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </form>
+                                                                                        </td>
+                                                                                        <td class="total-price"></td>
+                                                                                        <td class="product-remove"><a class="remove" href="#" title="close"><img th:src="@{/Assets_Web/img/icon-delete-cart.png}" alt="close"></a></td>
+                                                                                    </tr>
+                                                                                    <tr class="item_cart">
+                                                                                        <td class="product-photo"><img th:src="@{/Assets_Web/img/340x420.png}" alt="Futurelife"></td>
+                                                                                        <td class="produc-name"><a href="#" title="">Queen Rose - Pink</a></td>
+                                                                                        <td class="produc-price"><input value="$51.59" size="4" type="text"></td>
+                                                                                        <td class="product-quantity">
+                                                                                            <form enctype="multipart/form-data">
+                                                                                                <div class="product-signle-options product_15 clearfix">
+                                                                                                    <div class="selector-wrapper size">
+                                                                                                        <div class="quantity">
+                                                                                                            <input data-step="1" value="2" title="Qty" class="qty" size="4" type="text">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </form>
+                                                                                        </td>
+                                                                                        <td class="total-price"></td>
+                                                                                        <td class="product-remove"><a class="remove" href="#" title="close"><img th:src="@{/Assets_Web/img/icon-delete-cart.png}" alt="close"></a></td>
+                                                                                    </tr>
+                                                                                    <tr class="item_cart">
+                                                                                        <td class="product-photo"><img th:src="@{/Assets_Web/img/340x420.png}" alt="Futurelife"></td>
+                                                                                        <td class="produc-name"><a href="#" title="">Winter White Bouquet</a></td>
+                                                                                        <td class="produc-price"><input value="$51.59" size="4" type="text"></td>
+                                                                                        <td class="product-quantity">
+                                                                                            <form enctype="multipart/form-data">
+                                                                                                <div class="product-signle-options product_15 clearfix">
+                                                                                                    <div class="selector-wrapper size">
+                                                                                                        <div class="quantity">
+                                                                                                            <input data-step="1" value="2" title="Qty" class="qty" size="4" type="text">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </form>
+                                                                                        </td>
+                                                                                        <td class="total-price"></td>
+                                                                                        <td class="product-remove"><a class="remove" href="#" title="close"><img th:src="@{/Assets_Web/img/icon-delete-cart.png}" alt="close"></a></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                            <div class="row-total">
+                                                                                <div class="float-left">
+                                                                                    <h3>Sub Total</h3>
+                                                                                </div>
+                                                                                <!--End align-left-->
+                                                                                <div class="float-right">
+                                                                                    <p>$1,156.00</p>
+                                                                                </div>
+                                                                                <!--End align-right-->
+                                                                            </div>
+                                                                            <div class="box space-30">
+                                                                                <div class="float-left">
+                                                                                    <a class="link-v1 lh-50 margin-right-20 space-20" href="#" title="CLEAR SHOPPING CART">Limpiar Carrito</a>
+                                                                                    <a class="link-v1 lh-50 space-20" href="#" title="UPDATE SHOPPING CART">Actualizar Carrito</a>
+                                                                                </div>
+                                                                                <!-- End float left -->
+                                                                                <div class="float-right">
+                                                                                    <a class="link-v1 lh-50 bg-brand" href="#" title="CONTINUS SHOPPING">Seguir Comprando</a>
+                                                                                </div>
+                                                                                <!-- End float-right -->
+                                                                            </div>
+                                                                            <!-- End box -->
+                                                                            <div class="box cart-total space-30">
+                                                                                <div class="row">
+                                                                                    <div class="col-md-4 space-30">
+                                                                                        <div class="item coupon-code">
+                                                                                            <h3 class="title">Codigo Promocional</h3>
+                                                                                            <p>Ingrese su codigo de cupon si tiene uno</p>
+                                                                                            <form enctype="multipart/form-data">
+                                                                                                <div class="form-group">
+                                                                                                    <input type="text" class="form-control space-20" id="coundpon">
+                                                                                                </div>
+                                                                                            </form>
+                                                                                            <a class="link-v1 lh-50 rt" href="#" title="apply coupon">APLICAR CUPON</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-4 space-30">
+                                                                                        <div class="item">
+                                                                                            <h3 class="title">ENVIO ESTIMADO</h3>
+                                                                                            <p>Ingrese su destino para obtener un estimado del envio </p>
+                                                                                            <form enctype="multipart/form-data">
+                                                                                                <div class="form-group">
+                                                                                                    <label class=" control-label" for="inputcountry">Ciudad</label>
+                                                                                                    <input type="text" class="form-control space-20" id="inputcountry">
+                                                                                                </div>
+
+                                                                                                <div class="form-group">
+                                                                                                    <label class=" control-label" for="zip-code">Codigo postal <span>*</span></label>
+                                                                                                    <input type="text" class="form-control space-20" id="zip-code">
+                                                                                                </div>
+                                                                                            </form>
+                                                                                            <a class="link-v1 lh-50 rt" href="#" title="ESTIMADE">ESTIMADo</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <!-- End col-md-4 -->
+                                                                                    <div class="col-md-4 space-30">
+                                                                                        <div class="item">
+                                                                                            <h3 class="title">CARRITO TOTAL</h3>
+                                                                                            <p class="box"><span class="float-left">ENVIO</span><span class="float-right">$52.00</span></p>
+                                                                                            <p class="box space-30"><span class="float-left"><b>SUBTOTAL</b></span><span class="float-right"><b class="color-brand">$5,200.00</b></span></p>
+                                                                                            <a class="link-v1 lh-50 rt" href="#" title="POCEEED TO CHECKOUT">PEDIR Y PAGAR</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <!-- End col-md-4 -->
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- End box -->
+                                                                        </div>
+                                                                        <!-- End container -->
+                                                                    </div>
+                                                                    <!-- End cat-box-container -->
+                                                                </div>
+
+                                                            </main>
+                                                            <footer th:replace="Fragment_App/fragments_app::footer"></footer>
+
+                                                            <!-- boostrap & jquery -->
+                                                            <script th:src="@{/Assets_Web/js/jquery.min_af.js}"></script>
+                                                            <script th:src="@{/Assets_Web/js/bootstrap.min_0028.js}"></script>
+
+                                                            <!-- js file -->
+                                                            <script th:src="@{/Assets_Web/js/function-back-top.js}"></script>
+                                                            <script th:src="@{/Assets_Web/js/function-sidebar.js}"></script>
+                                                            <script th:src="@{/Assets_Web/js/funtion-header-v3.js}"></script>
+                                                            <script th:src="@{/Assets_Web/js/function-search-v2.js}"></script>
+                                                            <script th:src="@{/Assets_Web/js/function-shopping-cart.js}"></script>
+                                                        </body>
+                                                        </html>

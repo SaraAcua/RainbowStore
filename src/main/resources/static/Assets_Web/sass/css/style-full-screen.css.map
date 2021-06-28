@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA;;;;;;;;;;wCAUwC;AAEvC,0BAAyB;EAD1B,YAAY;IAEV,OAAO,EAAC,sBAAsB",
+"sources": ["../sass/style-full-screen.scss"],
+"names": [],
+"file": "style-full-screen.css"
+}

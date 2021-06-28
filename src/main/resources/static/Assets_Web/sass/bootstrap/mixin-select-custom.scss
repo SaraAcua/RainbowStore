@@ -1,0 +1,74 @@
+@import 'mixin';
+/*custom select*/
+.select-hidden {
+  display: none;
+  visibility: hidden;
+  padding-right: 10px;
+}
+.select {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  @include font-face(Poppins,14px,400);
+  width: 154px;height: 36px;
+  margin-left: 20px;
+
+}
+.select:nth-child(2){
+  	width: 70px;height: 36px;
+  	margin-left: 0;
+  }
+.select-styled {
+  position: absolute; 
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  padding: 8px 15px;
+  transition:all 0.2s ease-in;
+  &:after {
+    content:"\f107";
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Font Awesome\ 5 Free;
+  }
+ 
+  &:active, &.active {
+    &:after {
+     transform:rotate(180deg);
+    }
+  }
+}
+
+.select-options {
+  display: none; 
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #fff;
+  li {
+    margin: 0;
+    padding: 12px 0;
+    text-indent: 15px;
+    border-top: 1px solid darken(#fff, 10);
+   transition:all 0.15s ease-in;
+    &:hover {
+      color: #c0392b;
+      background: #fff;
+    }
+    &[rel="hide"] {
+      display: none;
+    }
+  }
+}
+
+ /*----end----*/

@@ -1,0 +1,249 @@
+/*------------------------------------
+    [Table of contents]
+    1. Body
+    2. Header / #header
+    3. Navigation / #navbar
+    4. Content / #content
+    5. Sidebar / #sidebar
+    6. Search / #search
+    7. Footer / #footer
+    
+--------------------------------------*/
+@import 'bootstrap/mixin';
+.space-padding-tb-30{
+	padding-top: 30px !important;
+    padding-bottom: 30px !important;
+}
+.cart-box-container{
+	.col-md-4{
+		padding-right: 0px;
+		&:last-child{padding-right:15px;}
+	}
+}
+
+.head-cart{
+	.item{
+		border: 1px solid #ebebeb;
+    	padding: 60px 0px;
+    	&.active{
+    		.icon{
+    			background: #222;
+    			color: #fff;
+    			border-color: #222;
+    		}
+    	}
+    	.icon{
+    			font: 400 22px/64px "Poppins";
+    			display: inline-block;
+    			width: 66px;
+    			height: 66px;
+    			border-radius: 50%;
+    			border: 1px solid #c2c2c2;
+    			background: #fff;
+    			color: #565656;
+    		}
+    		h3{
+    			font: 400 24px/30px "Poppins";
+    			color: #565656;
+    			text-transform: uppercase;
+    			margin-top: 25px;
+    			margin-bottom: 10px;
+    			padding-bottom: 20px;
+    			position: relative;
+    			&:after{
+    				position: absolute;
+    				content: '';
+    				bottom: 0px;
+    				left: 0px;
+    				right: 0px;
+    				margin: auto;
+    				height: 1px;
+    				width: 75px;
+    				background: #222;
+    			}
+    		}
+	}
+}
+.center{
+	text-align: center;
+}
+table{
+	margin-bottom: 0 !important;
+	border-bottom: 1px solid #ddd;
+	&.table{
+
+		&.cart-table{
+			thead{
+				background: #ddd;
+				th{
+					color: #fff;
+    				font: 700 18px "Poppins";
+    				padding: 12px 0px;
+    				letter-spacing: 0px;
+					&:first-child{
+						padding-left: 30px;
+					}
+				}
+			}
+			td{
+				background: #fff;
+				vertical-align: middle;
+				&.produc-name{
+					a{
+						font: 400 18px "Poppins";
+    					color: #2b2b2b;
+    					&:hover{text-decoration:none;}
+					}
+				}
+                &.product-photo{
+                    padding: 20px 0;
+                }
+				&.produc-price{
+					input{
+						border: none;
+    					font: 400 18px "Poppins";
+    					color: #666;
+    					background: transparent;
+					}
+				}
+				&.product-quantity{
+					.quantity{
+						position: relative;
+						.minus{
+							left: 10px;
+    						top: 15px;
+    						position: absolute;
+    						cursor: pointer;
+						}
+						.plus{
+							left: 110px;
+    						top: 15px;
+    						position: absolute;
+    						cursor: pointer;
+						}
+					}
+					input{
+						border: 1px solid #d8d8d8;
+    					height: 50px;
+    					width: 130px;
+    					text-align: center;
+    					font: 700 20px "Poppins";
+    					color: #565656;
+					}
+				}
+				&.total-price{
+					color: #222;
+    				font: 400 20px "Poppins";
+				}
+                &.product-in{
+                    font: 500 18px "Poppins";
+                    color: red;
+                    i{
+                        font-size: 18px;
+                        color: red;
+                    }
+                }
+                &.product-out{
+                    font: 500 18px "Poppins";
+                    i{
+                        font-size: 18px;
+                    }
+                }
+                &.add-to-cart{
+                   a{ @include btn-shopnow;}
+                }
+			}
+		}
+	}
+}
+.row-total{
+	background: #fff;
+	float: left;
+    width: 100%;
+    margin-bottom: 60px;
+    border-bottom: 1px solid #e6e6e6;
+    padding: 30px 0px 60px;
+    h3{
+    	font: 700 18px/20px "Poppins";
+    	color: #333;
+    	text-transform: uppercase;
+    	padding-left: 45px;
+    }
+    p{
+    	color: #222;
+    	font: 700 18px/20px "Poppins";
+    	padding-right: 45px;
+    }
+}
+.float-left{
+	float: left;
+}
+.float-right{
+	float: right;
+}
+.link-v1{
+	transition: all .3s ease;
+	font: 700 16px/38px "Abril Fatface";
+    color: #333;
+    width: 180px;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid #e4e4e4;
+    text-transform: uppercase;
+    color: #333;
+    background: #fff;
+	@include btn-shopnow;
+	&.lh-50{
+		line-height: 48px;
+    	width: auto;
+    	padding: 0 25px;
+	}
+}
+.space-20{
+	margin-bottom: 20px;
+}
+.space-30{
+	margin-bottom: 30px;
+}
+.box{
+	display: inline-block;
+	width: 100%;
+}
+.cart-box-container{
+	.cart-total{
+		.col-md-4{
+			padding-right: 15px;
+		}
+		.item{
+			padding: 30px;
+    		border: 1px solid #e7e7e7;
+    		h3{
+    			&.title{
+    				font: 700 18px "Poppins";
+    				color: #565656;
+    				text-transform: uppercase;
+    				margin-bottom: 20px;
+    			}
+    		}
+    		p{
+    			font: 400 14px/20px "Poppins";
+    			color: #565656;
+    			margin-bottom: 10px;
+    		}
+		}
+	}
+
+.form-control{
+	background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    color: #888888;
+    padding: 9px 20px;
+    line-height: 1.625;
+    height: 47px;
+    display: block;
+    width: 100%;
+    font: 400 16px "Roboto Slab";
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+}

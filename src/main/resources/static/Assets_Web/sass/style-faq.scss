@@ -1,0 +1,58 @@
+/*------------------------------------
+	[Table of contents]
+	1. Body
+	2. Header / #header
+	3. Navigation / #navbar
+	4. Content / #content
+	5. Sidebar / #sidebar
+	6. Search / #search
+	7. Footer / #footer
+	
+--------------------------------------*/
+@import 'bootstrap/mixin'; 
+.banner{
+	padding-bottom: 25px;
+	.title-banner{
+		width: 100%;
+		left: 0;
+		top: 33%;
+		p{
+			a{color: #f4f4f4;&:hover{text-decoration:none;}}
+			i{padding: 0 15px;}
+		}
+	}
+}
+.page-faq{
+	h2{@include font-face(Poppins,30px,500);}
+	h3{@include font-face(Poppins,20px,400);}
+	p{@include font-face(Poppins,14px,400);color: #949494;}
+	.content-text{
+		border-bottom: 1px solid #ddd;
+    	padding-bottom: 30px;
+    	&:last-child{border:0;}
+	}
+}
+.space-50{
+    		    margin-bottom: 50px !important;
+    	}
+@media (max-width: 1199px){
+	.banner{
+		.title-banner{
+			top: 28%;
+		}
+	}
+}
+@media (max-width: 991px){
+	.banner{
+		.title-banner{
+			top: 22%;
+		}
+	}
+}
+@media (max-width: 320px){
+	.banner{
+		.title-banner{
+			top: 6%;
+		}
+	}
+}

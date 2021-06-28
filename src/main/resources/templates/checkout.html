@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Checkout</title>
+        <meta charset="utf-8">
+            <!-- bootstrap vs fontawesome-->
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                    <link rel="icon" th:href="@{/Assets_Web/img/favicon.png}" type="image/x-icon"/>
+                    <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-about.css}">
+                        <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-res-about.css}">
+                            <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-faq.css}">
+                                <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-checkout.css}">
+                                    <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-fix-nav.css}">
+                                        <link rel="stylesheet" type="text/css" th:href="@{/Assets_Web/sass/css/style-form-search-mobile.css}">
+                                            <!-- slick -->
+
+                                            <!-- GG FONT -->
+                                            <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+                                                <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700" rel="stylesheet">
+                                                    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+                                                        </head>
+                                                        <body>
+                                                            <style  th:replace="Fragment_App/fragments_app::icon_whatsaapp"></style>
+                                                            <div th:replace="Fragment_App/fragments_app::icon_what_msg" ></div>
+
+
+                                                            <!-- Header fragment -->
+                                                            <header th:replace="Fragment_App/fragments_app::header_app2"></header>
+                                                            <main>
+                                                                <div class="content-search">
+
+                                                                    <div class="container container-100">
+                                                                        <i class="far fa-times-circle" id="close-search"></i>
+                                                                        <h3 class="text-center">what are your looking for ?</h3>
+                                                                        <form method="get" action="/search" role="search" style="position: relative;">
+                                                                            <input type="text" class="form-control control-search" value="" autocomplete="off" placeholder="Enter Search ..." aria-label="SEARCH" name="q">
+
+                                                                                <button class="button_search" type="submit">search</button>
+                                                                        </form>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="banner">
+                                                                    <div class="container">
+                                                                        <figure id="banner-about"><a href="#"><img th:src="@{/Assets_Web/img/1350x500.png}" class="img-responsive" alt="img-holiwood"></a></figure>
+                                                                        <div class="title-banner">
+                                                                            <h1>Checkout</h1>
+                                                                            <p><a href="#" title="Home">Home</a><i class="fa fa-caret-right"></i>Checkout</p>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="row head-cart">
+                                                                    <div class="col-md-4 space-30">
+                                                                        <div class="item active center">
+                                                                            <p class="icon">01</p>
+                                                                            <h3>Carrito de compra</h3>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- End col-md-4 -->
+                                                                    <div class="col-md-4 space-30">
+                                                                        <div class="item center">
+                                                                            <p class="icon">02</p>
+                                                                            <h3>Check out</h3>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- End col-md-4 -->
+                                                                    <div class="col-md-4 space-30">
+                                                                        <div class="item center">
+                                                                            <p class="icon">03</p>
+                                                                            <h3>Compras completadas</h3>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- End col-md-4 -->
+                                                                </div>
+                                                                <!-- End container -->
+                                                                <div class="cart-box-container check-out">
+                                                                    <div class="container container-ver2">
+                                                                        <div class="row">
+                                                                            <div class="col-md-6">
+                                                                                <h3 class="title-brand">DIRECCIÓN DE ENVIO</h3>
+                                                                                <form class="form-horizontal">
+                                                                                    <div class="form-group col-md-6">
+                                                                                        <label for="inputfname" class=" control-label">Nombre <span class="color">*</span></label>                            
+                                                                                        <input type="text" placeholder="Enter your first name..." id="inputfname" class="form-control">  
+                                                                                    </div>
+                                                                                    <div class="form-group col-md-6">
+                                                                                        <label for="inputlname" class=" control-label">Apellido <span class="color">*</span></label>                            
+                                                                                        <input type="text" placeholder="Enter your last name..." id="inputlname" class="form-control">  
+                                                                                    </div>
+
+                                                                                    <div>
+                                                                                        <div class="form-group col-md-6">
+                                                                                            <label for="inputemail" class=" control-label">Email<span class="color">*</span></label>                            
+                                                                                            <input type="text" placeholder="Enter your email..." id="inputemail" class="form-control">  
+                                                                                        </div>
+                                                                                        <div class="form-group col-md-6">
+                                                                                            <label for="inputphone" class=" control-label">Celular<span class="color">*</span></label>                            
+                                                                                            <input type="text" placeholder="Enter your phone..." id="inputphone" class="form-control">  
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <label for="inputcountry1" class=" control-label">CIUDAD<span class="color">*</span></label>
+                                                                                        <select id="inputcountry1" name="inputcountry1" class="country form-control">
+                                                                                            <option>COUNTRY 2</option>
+                                                                                            <option selected="selected">COUNTRY 1</option>
+                                                                                            <option>COUNTRY 3</option>
+                                                                                            <option>COUNTRY 4</option>
+                                                                                        </select>
+                                                                                    </div> 
+                                                                                    <div class="form-group">
+                                                                                        <label for="inputstreet" class=" control-label">Dirección<span class="color">*</span></label>                            
+                                                                                        <input type="text" placeholder="Enter your street address..." id="inputstreet" class="form-control space-20">  
+                                                                                            <input type="text" placeholder="Enter the apartment, floor, suite, etc..." id="inputapartment" class="form-control"> 
+                                                                                                </div>                        
+                                                                                                <div class="form-group">
+
+                                                                                                </div>
+                                                                                                <div>
+
+
+                                                                                                </div> 
+                                                                                                <label for="check-1" class="form-check space-50"><input type="checkbox" name="check1" id="check-1"><span class="checkmark"></span> Crear una Cuenta?</label>
+
+                                                                                                </form>
+
+
+                                                                                                </div>
+                                                                                                <!-- End col-md-8 -->
+                                                                                                <div class="col-md-6 space-30">
+                                                                                                    <div class="box">
+                                                                                                        <h3 class="title-brand">SU PEDIDO</h3>
+                                                                                                        <div class="info-order">
+                                                                                                            <div class="product-name">
+                                                                                                                <ul>
+                                                                                                                    <li class="head">
+                                                                                                                        <span class="name">NOMBRE DEL PRODUCTO</span>
+                                                                                                                        <span class="qty"><b>CANTIDAD</b></span>
+                                                                                                                        <span class="total"><b>SUB TOTAL</b></span>
+                                                                                                                    </li>
+                                                                                                                    <li>
+                                                                                                                        <span class="name">Modern Chair</span>
+                                                                                                                        <span class="qty">01</span>
+                                                                                                                        <span class="total">$520.00</span>
+                                                                                                                    </li>
+                                                                                                                    <li>
+                                                                                                                        <span class="name">Toldbod Lamp</span>
+                                                                                                                        <span class="qty">02</span>
+                                                                                                                        <span class="total">$190.00</span>
+                                                                                                                    </li>
+                                                                                                                    <li>
+                                                                                                                        <span class="name">Getama Sofa</span>
+                                                                                                                        <span class="qty">03</span>
+                                                                                                                        <span class="total">$270.00</span>
+                                                                                                                    </li>
+                                                                                                                </ul>
+                                                                                                            </div>
+                                                                                                            <!-- End product-name -->
+                                                                                                            <ul class="product-order">
+                                                                                                                <li>
+                                                                                                                    <span class="left">SUBTOTAL</span>
+                                                                                                                    <span class="right">$980.00</span>
+                                                                                                                </li>
+                                                                                                                <li>
+                                                                                                                    <span class="left">ENVIO</span>
+                                                                                                                    <span class="right">Free Shipping</span>
+                                                                                                                </li>
+                                                                                                                <li>
+                                                                                                                    <span class="left">TOTAL PEDIDO</span>
+                                                                                                                    <span class="right brand">$980.00</span>
+                                                                                                                </li>
+                                                                                                            </ul>
+                                                                                                        </div>
+                                                                                                        <!-- End info-order -->
+                                                                                                        <div class="payment-order box float-left">
+                                                                                                            <h3 class="title-brand">METODO DE PAGO</h3>
+                                                                                                            <ul class="tabs">
+                                                                                                                <li>
+                                                                                                                    <i class="icon"></i>
+                                                                                                                    <h4>Tarjeta de credito</h4>
+
+                                                                                                                </li>
+                                                                                                                <li>
+                                                                                                                    <i class="icon"></i>
+                                                                                                                    <h4>PSE</h4>
+
+                                                                                                                </li>
+                                                                                                                <li>
+                                                                                                                    <i class="icon"></i>
+                                                                                                                    <h4>Contra entrega</h4>
+                                                                                                                </li>
+                                                                                                                <li>
+                                                                                                                    <i class="icon"></i>
+
+                                                                                                                </li>
+                                                                                                            </ul>
+                                                                                                        </div>
+                                                                                                        <a class="link-v1 box lh-50 rt full" href="#" title="PLACE ORDER">REALIZAR PEDIDO</a>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                </div>
+                                                                                                <!-- End row -->
+                                                                                                </div>
+                                                                                                <!-- End container -->
+                                                                                                </div>
+                                                                                                <!-- End cat-box-container -->
+                                                                                                <footer th:replace="Fragment_App/fragments_app::footer"></footer>
+                                                                                                </main>
+
+
+                                                                                                <!-- boostrap & jquery -->
+                                                                                                <script th:src="@{/Assets_Web/js/jquery.min_af.js}"></script>
+                                                                                                <script th:src="@{/Assets_Web/js/bootstrap.min_0028.js}"></script>
+
+                                                                                                <!-- js file -->
+                                                                                                <script th:src="@{/Assets_Web/js/function-back-top.js}"></script>
+                                                                                                <script th:src="@{/Assets_Web/js/function-sidebar.js}"></script>
+                                                                                                <script th:src="@{/Assets_Web/js/funtion-header-v3.js}"></script>
+                                                                                                <script th:src="@{/Assets_Web/js/function-search-v2.js}"></script>
+                                                                                                <script th:src="@{/Assets_Web/js/function-shopping-cart.js}"></script>
+                                                                                                <script th:src="@{/Assets_Web/js/function-store.js}"></script>
+                                                                                                </body>
+                                                                                                </html>
