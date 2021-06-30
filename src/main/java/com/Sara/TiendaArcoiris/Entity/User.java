@@ -37,6 +37,7 @@ public class User implements Serializable {
     private String password;
 
     public User() {
+        this.status = 1;
     }
 
     public User(Integer id, String username, String email, String role, int status) {

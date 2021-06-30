@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- Favicon icon -->
+        <link rel="icon" type="image/png" sizes="16x16" th:href="@{Assets_Admin/assets/images/favicon.png}">
+        <title>AdminWrap - Easy to Customize Bootstrap 4 Admin Template</title>
+        <!-- Bootstrap Core CSS -->
+        <link th:href="@{/Assets_Admin/assets/node_modules/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+        <!-- Footable CSS -->
+        <link th:href="@{Assets_Admin/assets/node_modules/footable/css/footable.core.css}" rel="stylesheet">
+        <link th:href="@{Assets_Admin/assets/node_modules/bootstrap-select/bootstrap-select.min.css}" rel="stylesheet" />
+        <!-- Custom CSS -->
+        <link th:href="@{Assets_Admin/main/css/style.css}" rel="stylesheet">
+        <!-- page css -->
+        <link th:href="@{Assets_Admin/main/css/pages/footable-page.css}" rel="stylesheet">
+        <!-- You can change the theme colors from here -->
+        <link th:href="@{Assets_Admin/main/css/colors/default.css}" id="theme" rel="stylesheet">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    </head>
+
+
+    <body class="fix-header card-no-border fix-sidebar">
+        <!-- ============================================================== -->
+        <!-- Preloader - style you can find in spinners.css -->
+        <!-- ============================================================== -->
+        <div class="preloader">
+            <div class="loader">
+                <div class="loader__figure"></div>
+                <p class="loader__label">Arcoiris</p>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- Main wrapper - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <div id="main-wrapper">
+            <!-- ============================================================== -->
+            <!-- Topbar header - style you can find in pages.scss -->
+            <!-- ============================================================== -->
+         <header th:replace="Fragment_Admin/fragment_Admin::header_Admin"></header>
+            <!-- ============================================================== -->
+            <!-- End Topbar header -->
+
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Left Sidebar - style you can find in sidebar.scss  -->
+
+            <!-- ============================================================== -->
+         <aside th:replace="Fragment_Admin/fragment_Admin::aside_Admin"></aside>
+            <!-- ============================================================== -->
+            <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Page wrapper  -->
+            <!-- ============================================================== -->
+            <div class="page-wrapper">
+                <!-- ============================================================== -->
+                <!-- Container fluid  -->
+                <!-- ============================================================== -->
+                <div class="container-fluid">
+                    <!-- ============================================================== -->
+                    <!-- Bread crumb and right sidebar toggle -->
+                    <!-- ============================================================== -->
+                    <div class="row page-titles">
+                        <div class="col-md-5 align-self-center">
+                            <h3 class="text-themecolor">Listado clientes</h3>
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                                <li class="breadcrumb-item active">Listado clientes</li>
+                            </ol>
+                        </div>
+                        <div class="col-md-7 align-self-center text-right d-none d-md-block">
+
+                        </div>
+                        <div class="">
+                            <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- End Bread crumb and right sidebar toggle -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Start Page Content -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Productos</h4>
+                                    <h6 class="card-subtitle"></h6>
+                                    <div class="table-responsive">
+                                        <table id="tablapersonal" class="table m-t-30 table-hover contact-list">
+                                            <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>Nombre</th>
+                                                    <th>Apellido</th>
+                                                    <th>Telefono</th>
+                                                    <th>Email</th>
+                                                    <th>Direccion</th>
+                                                    <th>Clave</th>
+                                                    <th>Estado</th>
+                                                    <th>Fecha</th>
+                                                    <th>Acciones</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                             
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Column -->
+
+                            <!-- Column -->
+
+                            <!-- Column -->
+
+                            <!-- Column -->
+
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- End PAge Content -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Right sidebar -->
+                    <!-- ============================================================== -->
+                    <!-- .right-sidebar -->
+
+                    <!-- ============================================================== -->
+                    <!-- End Right sidebar -->
+                    <!-- ============================================================== -->
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Container fluid  -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- footer -->
+                <!-- ============================================================== -->
+            <!-- <footer th:replace="Fragment_Admin/fragment_Admin::footerAdmin"></footer
+                <!-- ============================================================== -->
+                <!-- End footer -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Page wrapper  -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Wrapper -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- All Jquery -->
+        <!-- ============================================================== -->
+        <script th:src="@{Assets_Admin/assets/node_modules/jquery/jquery.min.js}"></script>
+        <!-- Bootstrap tether Core JavaScript -->
+        <script th:src="@{Assets_Admin/assets/node_modules/bootstrap/js/popper.min.js}"></script>
+        <script th:src="@{Assets_Admin/assets/node_modules/bootstrap/js/bootstrap.min.js}"></script>
+        <!-- slimscrollbar scrollbar JavaScript -->
+        <script th:src="@{Assets_Admin/assets/node_modules/ps/perfect-scrollbar.jquery.min.js}"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        import swal from 'sweetalert';
+        <!--Wave Effects -->
+        <script th:src="@{Assets_Admin/main/js/waves.js}"></script>
+        <!--Menu sidebar -->
+        <script th:src="@{Assets_Admin/main/js/sidebarmenu.js}"></script>
+        <!--Custom JavaScript -->
+        <script th:src="@{Assets_Admin/main/js/custom.min.js}"></script>
+        <!-- ============================================================== -->
+        <!-- Style switcher -->
+        <script th:src="@{Assets_Admin/assets/node_modules/datatables/jquery.dataTables.min.js}"></script>
+        <!-- ============================================================== -->
+        <script th:src="@{Assets_Admin/assets/node_modules/styleswitcher/jQuery.style.switcher.js}"></script>
+        <script th:src="@{Assets_Admin/main/js/jquery.validate.js}"></script>
+        <script th:src="@{Assets_Admin/main/js/localization/messages_es.min.js}"></script>
+        <script th:src="@{Assets_Admin/main/js/jquery.serializejson.js}"></script>
+        <script th:src="@{Assets_Admin/main/js/funciones/form-personal.js}"></script>
+        <script>
+            $('#tablapersonal').DataTable({
+                "lengthMenu": [[15, 25, 50, 100, -1], [15, 25, 50, 100, "Todo"]],
+                language: {
+                    "sProcessing": "Procesando...",
+                    "sLengthMenu": "Mostrar _MENU_ registros",
+                    "sZeroRecords": "No se encontraron resultados",
+                    "sEmptyTable": "Ningún dato disponible en esta tabla",
+                    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Buscar:",
+                    "sUrl": "",
+                    "sInfoThousands": ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast": "Último",
+                        "sNext": "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                    },
+                },
+            });
+        </script>
+    </body>
+
+</html>

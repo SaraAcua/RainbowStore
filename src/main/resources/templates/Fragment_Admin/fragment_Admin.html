@@ -1,0 +1,287 @@
+
+<footer th:fragment="footerAdmin"  class="footer text-center">
+    Clínica el buen pastor  © 2021 Sara Katerin Acuña. Todos los derechos reservados
+</footer>
+
+
+
+
+<header th:fragment="header_Admin" class="topbar">
+    <nav class="navbar top-navbar navbar-expand-md navbar-light">
+        <!-- ============================================================== -->
+        <!-- Logo -->
+        <!-- ============================================================== -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{/dashboard}">
+                <!-- Logo icon --><b>
+                    <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                    <!-- Dark Logo icon -->
+                    <img th:src="@{Assets_Web/img/logo.png}" style="margin-left: -20px" width="90" height="50"  class="dark-logo" />
+                    <!-- Light Logo icon -->
+                    <img src="../../static" th:src="@{/Assets_Admin/assets/images/logoarco.png}" alt="homepage" class="light-logo" />
+                </b>
+                <!--End Logo icon -->
+                <!-- Logo text --><span>
+                    <!-- dark Logo text -->
+                    <img  th:src="@{/Assets_Admin/assets/images/logoarco.png}" style="margin-left: -20px" height="50" width="190" alt="homepage" class="dark-logo" />
+                    <!-- Light Logo text -->    
+                    <img th:src="@{/Assets_Admin/assets/images/logoarco.png}" class="light-logo" alt="homepage" /></span> </a>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Logo -->
+        <!-- ============================================================== -->
+        <div class="navbar-collapse">
+            <!-- ============================================================== -->
+            <!-- toggle and nav items -->
+            <!-- ============================================================== -->
+            <ul class="navbar-nav mr-auto">
+                <!-- This is  -->
+                <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i class="sl-icon-menu"></i></a> </li>
+                <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="sl-icon-menu"></i></a> </li>
+                <!-- ============================================================== -->
+                <!-- Search -->
+                <!-- ============================================================== -->
+                <li class="nav-item hidden-xs-down search-box"> <a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="icon-Magnifi-Glass2"></i></a>
+                    <form class="app-search">
+                        <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
+                </li>
+            </ul>
+            <!-- ============================================================== -->
+            <!-- User profile and search -->
+            <!-- ============================================================== -->
+            <ul class="navbar-nav my-lg-0">
+                <!-- ============================================================== -->
+                <!-- Comment -->
+                <!-- ============================================================== -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="icon-Bell"></i>
+                        <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+                    </a>
+
+                </li>
+                <!-- ============================================================== -->
+                <!-- End Comment -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Messages -->
+                <!-- ============================================================== -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="icon-Mail"></i>
+                        <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+                    </a>
+
+                </li>
+                <!-- ============================================================== -->
+                <!-- End Messages -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- mega menu -->
+                <!-- ============================================================== -->
+
+                <!-- ============================================================== -->
+                <!-- End mega menu -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Language -->
+                <!-- ============================================================== -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="flag-icon flag-icon-co"></i></a>
+                    <div class="dropdown-menu dropdown-menu-right animated bounceInDown"> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-in"></i> India</a> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-fr"></i> French</a> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-cn"></i> China</a> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-de"></i> Dutch</a> </div>
+                </li>
+                <!-- ============================================================== -->
+                <!-- Profile -->
+                <!-- ============================================================== -->
+                <li class="nav-item dropdown u-pro">
+                    <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/images/users/4.jpg" alt="user" class="" /> <span class="hidden-md-down"><?php echo ($_SESSION['Nombre']." ".$_SESSION['Apellido']) ?> &nbsp;<i class="fa fa-angle-down"></i></span> </a>
+                    <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                        <ul class="dropdown-user">
+                            <li>
+                                <div class="dw-user-box">
+                                    <div class="u-img"><img th:src="@{/Assets_Admin/assets/images/users/4.jpg}" alt="user"></div>
+                                    <div class="u-text">
+                                      
+                                    </div>
+                            </li>
+
+                            <li role="separator" class="divider"></li>
+                            <li><a href="" ><i class="fa fa-power-off"></i> Cerrar sesiòn</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+<aside th:fragment="aside_Admin" class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="nav-small-cap">--- Administrador</li>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="icon-Car-Wheel"></i><span class="hide-menu">Gestion Usuario <span </span></span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a  th:href="@{/formUser}">Registrar Usuario</a></li>
+                                <li><a th:href="@{/listUser}">Listado de Usuarios </a></li>
+                                
+
+                             
+                            </ul>
+                        </li>
+                         <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="icon-Car-Wheel"></i><span class="hide-menu">Gestion Clientes <span </span></span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a  th:href="@{/listClients}">Listado de clientes</a></li>
+                                
+                                
+
+                             
+                            </ul>
+                        </li>
+                        
+                       
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="icon-Receipt-4"></i><span class="hide-menu">Productos</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                
+                                <li><a th:href="@{/formProduct}">Registrar producto</a></li>
+                                <li><a th:href="@{/listProducts}">Listado de productos</a></li>
+                               
+                            </ul>
+                        </li>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="icon-Receipt-2"></i><span class="hide-menu">Factura</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                
+                              
+                                <li><a href="{}">Listado de facturas</a></li>
+                               
+                            </ul>
+                        </li>
+                       
+
+                                </li>
+                            </ul>
+                        </li>
+                        
+                        </li>
+                        
+                       
+                        
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="#">item 1.1</a></li>
+                                <li><a href="#">item 1.2</a></li>
+                                <li> <a class="has-arrow" href="#" aria-expanded="false">Menu 1.3</a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="#">item 1.3.1</a></li>
+                                        <li><a href="#">item 1.3.2</a></li>
+                                        <li><a href="#">item 1.3.3</a></li>
+                                        <li><a href="#">item 1.3.4</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">item 1.4</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+
+<nav th:fragment="nav_Admin" class="navbar top-navbar navbar-expand-md navbar-light">
+    <!-- ============================================================== -->
+    <!-- Logo -->
+    <!-- ============================================================== -->
+    <div class="navbar-header">
+        <a class="navbar-brand" href="dashboard.php">
+            <!-- Logo icon --><b>
+                <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                <!-- Dark Logo icon -->
+                <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                <!-- Light Logo icon -->
+                <img src="../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+            </b>
+            <!--End Logo icon -->
+            <!-- Logo text --><span>
+                <!-- dark Logo text -->
+                <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                <!-- Light Logo text -->
+                <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+            </span>
+        </a>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Logo -->
+    <!-- ============================================================== -->
+    <div class="navbar-collapse">
+        <!-- ============================================================== -->
+        <!-- toggle and nav items -->
+        <!-- ============================================================== -->
+        <ul class="navbar-nav mr-auto">
+            <!-- This is  -->
+            <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i class="sl-icon-menu"></i></a> </li>
+            <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="sl-icon-menu"></i></a> </li>
+            <!-- ============================================================== -->
+            <!-- Search -->
+            <!-- ============================================================== -->
+            <li class="nav-item hidden-xs-down search-box"> <a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="icon-Magnifi-Glass2"></i></a>
+                <form class="app-search">
+                    <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a>
+                </form>
+            </li>
+        </ul>
+        <!-- ============================================================== -->
+        <!-- User profile and search -->
+        <!-- ============================================================== -->
+        <ul class="navbar-nav my-lg-0">
+            <!-- ============================================================== -->
+            <!-- Comment -->
+            <!-- ============================================================== -->
+        
+            <!-- ============================================================== -->
+            <!-- End Comment -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Messages -->
+            <!-- ============================================================== -->
+            
+            <!-- ============================================================== -->
+            <!-- End Messages -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- mega menu -->
+            <!-- ============================================================== -->
+      
+            <!-- ============================================================== -->
+            <!-- End mega menu -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Language -->
+            <!-- ============================================================== -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="flag-icon flag-icon-es"></i></a>
+                <div class="dropdown-menu dropdown-menu-right animated bounceInDown"><a class="dropdown-item" disabled href="#"><i class="flag-icon flag-icon-es"></i> Español</a> </div>
+            </li>
+            <!-- ============================================================== -->
+            <!-- Profile -->
+            <!-- ============================================================== -->
+            <li class="nav-item dropdown u-pro">
+                <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/images/users/1.jpg" alt="user" class="" /> <span class="hidden-md-down">Mark Sanders &nbsp;<i class="fa fa-angle-down"></i></span> </a>
+                <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                    <ul class="dropdown-user">
+                        <li>
+                            <div class="dw-user-box">
+                                <div class="u-img"><img src="../assets/images/users/4.jpg" alt="user"></div>
+                                <div class="u-text">
+                                    <h4>Steave Jobs</h4>
+                                </div>
+                            </div>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#"><i class="fa fa-power-off"></i> Cerrar sesión</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>

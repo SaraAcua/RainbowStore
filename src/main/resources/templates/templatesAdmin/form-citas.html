@@ -36,37 +36,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     </head>
-    <?php
-    include '../controlador/confi.php';
-    session_start();
-
-    if (isset($_SESSION['Usuario'])) {
-        if (isset($_GET['id'])) {
-            $codigo = $_GET['id'];
-
-            $sql = "select c.*,(select p.nombre from pacientes p where p.codigo = c.idpaciente) as nombrePaciente,(select p.apellido from pacientes p where p.codigo = c.idpaciente) as apellidoPaciente,(select per.nombre from personal per where per.codigo = c.idpersonal) as nombrePersonal,(select per.apellido from personal per where per.codigo = c.idpersonal) as apellidoPersonal,(select per.tipo from personal per where per.codigo = c.idpersonal) as tipoPersonal, c.id as idCita, c.fecha as fechaCita, c.estado as estadoCita  from citas c where c.id = " . $_GET['id'];
-
-            if (!$result = mysqli_query($con, $sql))
-                die();
-
-            $pacientes = array(); //creamos un array
-
-            while ($row = $result->fetch_assoc()) {
-                $idCita = $row['idCita'];
-                $idPaciente = $row['idpaciente'];
-                $idPersonal = $row['idpersonal'];
-                $nombrePersonal = $row['nombrePersonal'] . ' ' . $row['apellidoPersonal'];
-                $tipo = $row['tipoPersonal'];
-                $nombrePaciente = $row['nombrePaciente'] . ' ' . $row['apellidoPaciente'];
-                $fechaCita = $row['fechaCita'];
-                $estadoCita = $row['estadoCita'];
-            }
-        }
-    } else {
-        header('Location: index.php');
-    }
-    ?>
-
+    
     <body class="fix-header fix-sidebar card-no-border">
         <!-- ============================================================== -->
         <!-- Preloader - style you can find in spinners.css -->
@@ -85,9 +55,7 @@
             <!-- Topbar header - style you can find in pages.scss -->
             <!-- ============================================================== -->
             <header class="topbar">
-                <?php
-                include './Include/header.php';
-                ?>
+              
 
                 <nav class="navbar top-navbar navbar-expand-md navbar-light">
                     <!-- ============================================================== -->
@@ -366,13 +334,7 @@
            
             <!-- ============================================================== -->
             <!-- End Topbar header -->
-               <?php
-            if ($_SESSION['Rol'] == "admin") {
-                include './Include/sidebar_admin.php';
-            } else {
-                include './Include/sidebar_personal.php';
-            }
-            ?>
+        
             <!-- ============================================================== -->
             <!-- ============================================================== -->
             <!-- Left Sidebar - style you can find in sidebar.scss  -->
@@ -428,20 +390,17 @@
                                             <div class="row p-t-20">
                                                 <div class="col-md-6">
                                                     <label >Personal</label>
-                                                    <?php if (isset($_GET["id"])) { ?>
-                                                        <input type="hidden"  name="id" value="<?php echo $_GET["id"]; ?>">
-                                                    <?php } ?>
-
-                                                    <?php if (isset($_GET["id"])) { ?>   
+                                                      <input type="hidden"  name="id" value="">
+                      
                                                         <div class="input-group mb-3">
-                                                            <input readonly=""  type="text" disabled="5" value="<?php echo $nombrePersonal ?>" id="txtNombrePersonal" class="form-control" placeholder="Personal" aria-label="" aria-describedby="basic-addon1">
+                                                            <input readonly=""  type="text" disabled="5" value="" id="txtNombrePersonal" class="form-control" placeholder="Personal" aria-label="" aria-describedby="basic-addon1">
                                                             <input class="form-control" value="<?php echo $idPersonal ?>"  name="id_Personal"  type="hidden" id="txtidPersonal">
                                                             <div class="input-group-append">
                                                                 <button class="btn" disabled="" style="background-color: #14A3E7;color: #ffffff" data-toggle="modal" data-toggle="modal" data-target="#ModalSeleccionarPersonal" type="button">Seleccionar personal</button>
                                                             </div>
                                                         </div>
 
-                                                    <?php } else { ?>
+                                                  
                                                         <div class="input-group mb-3">
                                                             <input readonly=""  type="text" disabled="5"  id="txtNombrePersonal" class="form-control" placeholder="Personal" aria-label="" aria-describedby="basic-addon1">
                                                             <input class="form-control"   name="id_Personal"  type="hidden" id="txtidPersonal">
@@ -449,22 +408,22 @@
                                                                 <button class="btn" style="background-color: #14A3E7;color: #ffffff" data-toggle="modal" data-toggle="modal" data-target="#ModalSeleccionarPersonal" type="button">Seleccionar personal</button>
                                                             </div>
                                                         </div>
-                                                    <?php } ?>
+                                               
 
                                                 </div>
                                                 <!--/span-->
                                                 <div class="col-md-6">
                                                     <label >Paciente</label>
-                                                    <?php if (isset($_GET["id"])) { ?>
+                         
 
                                                         <div class="input-group mb-3">
-                                                            <input type="text" required value="<?php echo $nombrePaciente ?>" disabled="5" id="txtNombrePaciente" class="form-control" placeholder="Paciente" aria-label="" aria-describedby="basic-addon1">
-                                                            <input class="form-control" value="<?php echo $idPaciente ?>" required  name="id_Paciente" type="hidden" id="txtidPaciente">
+                                                            <input type="text" required value="" disabled="5" id="txtNombrePaciente" class="form-control" placeholder="Paciente" aria-label="" aria-describedby="basic-addon1">
+                                                            <input class="form-control" value="" required  name="id_Paciente" type="hidden" id="txtidPaciente">
                                                             <div class="input-group-append">
                                                                 <button disabled=""  required class="btn" style="background-color: #14A3E7;color: #ffffff" data-toggle="modal" data-toggle="modal" data-target="#ModalSeleccionarPaciente" type="button">Seleccionar paciente</button>
                                                             </div>
                                                         </div>
-                                                    <?php } else { ?>
+                                             
                                                         <div class="input-group mb-3">
                                                             <input readonly="" type="text" required  disabled="5" id="txtNombrePaciente" class="form-control" placeholder="Paciente" aria-label="" aria-describedby="basic-addon1">
                                                             <input class="form-control" required  name="id_Paciente" type="hidden" id="txtidPaciente">
@@ -473,7 +432,7 @@
                                                             </div>
                                                         </div>
 
-                                                    <?php } ?>
+                                                  
                                                 </div>
                                                 <!--/span-->
                                             </div>
@@ -485,11 +444,11 @@
                                                     <div class="form-group">
                                                         <label class="control-label">Fecha de cita</label>
 
-                                                        <?php if (isset($_GET["id"])) { ?>
-                                                            <input type="date" required readonly=""   name="fecha" value="<?php echo $fechaCita; ?>" class="form-control">
-                                                        <?php } else { ?>
+                                                      
+                                                            <input type="date" required readonly=""   name="fecha" value="" class="form-control">
+                                                  
                                                             <input type="date"   required   name="fecha" class="form-control" placeholder="dd/mm/yyyy">
-                                                        <?php } ?>
+                                       
                                                     </div>
                                                 </div>
                                                 <!--/span-->
@@ -502,7 +461,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label>Estado</label>
-                                                        <?php if (!isset($_GET["id"])) { ?>
+                                                    
                                                             <select id="estado" name="estado" required class="form-control custom-select">
                                                                 <option value="">--Seleccione--</option>
                                                                 <option>Atendido</option>
@@ -511,47 +470,8 @@
                                                                 <option>Asignado</option>
                                                                 <option>Anulada</option>
                                                             </select>
-                                                        <?php } else { ?>
-                                                            <select id="estado" name="estado" required class="form-control custom-select">
-
-                                                                <?php if ($estado === "Atendido") { ?>
-                                                                    <option value="">--Seleccione--</option>
-                                                                    <option value="Atendido" selected="">Atendido</option>
-                                                                    <option value="En servicio">En Servicio</option>
-                                                                    <option value="No Atendido">No Atendido</option>
-                                                                    <option value="Asignado">Asignado</option>
-                                                                    <option value="Anulada">Anulada</option>
-                                                                <?php } else if ($estado === "En Servicio") { ?>
-                                                                    <option value="">--Seleccione--</option>
-                                                                    <option value="Atendido"  >Atendido</option>
-                                                                    <option selected="">En Servicio</option>
-                                                                    <option value="No Atendido">No Atendido</option>
-                                                                    <option value="Asignado">Asignado</option>
-                                                                    <option value="Anulada">Anulada</option>
-                                                                <?php } else if ($estado === "No Atendido") { ?>
-                                                                    <option    value="">--Seleccione--</option>
-                                                                    <option value="No Atendido">Atendido</option>
-                                                                    <option value="En servicio">En Servicio</option>
-                                                                    <option value="No Atendido" selected="">No Atendido</option>
-                                                                    <option value="Asignado">Asignado</option>
-                                                                    <option value="Anulada">Anulada</option>
-                                                                <?php } else if ($estado === "Asignado") { ?>
-                                                                    <option   value="">--Seleccione--</option>
-                                                                    <option value="Atendido">Atendido</option>
-                                                                    <option value="En servicio">En Servicio</option>
-                                                                    <option value="No Atendido">No Atendido</option>
-                                                                    <option value="Asignado" selected="">Asignado</option>
-                                                                    <option value="Anulada">Anulada</option>
-                                                                <?php } else { ?>
-                                                                    <option  value="">--Seleccione--</option>
-                                                                    <option value="Atendido">Atendido</option>
-                                                                    <option value="En servicio">En Servicio</option>
-                                                                    <option value="No Atendido">No Atendido</option>
-                                                                    <option value="Asignado" >Asignado</option>
-                                                                    <option value="Anulada" selected="">Anulada</option>
-                                                                <?php } ?>
-                                                            </select>
-                                                        <?php } ?>
+                                                        
+                                                    
                                                     </div>
                                                 </div>
                                             </div>
@@ -564,13 +484,13 @@
 
                                 </div>
                                 <div class="form-actions">
-                                    <?php if (!isset($_GET["id"])) { ?>
+                              
                                         <input hidden="" name="accion" value="RegistrarC">
                                         <button type="submit"  class="btn btn-success"  ><img id="imgLoaderPass" src="../assets/images/spinner/Loader_BK_SVG.svg" alt="x"  width="28" height="18" /> <i class="fa fa-check"></i> Registrar</button>
-                                    <?php } else { ?>
+                               
                                         <input hidden="" name="accion" value="ActualizarC">
                                         <button type="submit"   class="btn btn-success"  ><img id="imgLoaderPass" src="../assets/images/spinner/Loader_BK_SVG.svg" alt="x"  width="28" height="18" /> <i class="fa fa-check"></i> Actualizar</button>
-                                    <?php } ?> 
+                             
                                     <a href="dashboard.php"><button type="button" class="btn btn-inverse">Cancel</button></a> 
                                 </div>
                                 </form>
@@ -594,9 +514,7 @@
                                                         <th style="background-color: #14A3E7;font-weight: bolder;color: white;text-align: center;border: white solid 1px;font-size:18px">Seleccionar</th>
                                                         </thead>
                                                         <tbody id="Cuerpo_Tabla_Color_Modal">
-                                                            <?php
-                                                            include '../controlador/modal-citas-pacientes.php';
-                                                            ?>
+                                                          
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -626,9 +544,7 @@
                                                         <th style="background-color: #14A3E7;font-weight: bolder;color: white;text-align: center;border: white solid 1px;font-size:18px">Seleccionar</th>
                                                         </thead>
                                                         <tbody id="Cuerpo_Tabla_personal_Modal">
-                                                            <?php
-                                                            include '../controlador/modal-citas-personal.php';
-                                                            ?>
+                                                           
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -678,9 +594,7 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <?php
-            include './Include/footer.php';
-            ?>
+         
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->

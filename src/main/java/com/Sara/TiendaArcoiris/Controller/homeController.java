@@ -7,6 +7,7 @@ package com.Sara.TiendaArcoiris.Controller;
 
 
 import com.Sara.TiendaArcoiris.Entity.Client;
+import com.Sara.TiendaArcoiris.Entity.User;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -93,6 +94,28 @@ public class homeController {
      @RequestMapping("/dashboard")
     public String Dashboard(Model model){
         
-        return "dashboard";
+        return "templatesAdmin/dashboard";
 }
+
+    @RequestMapping("/formProduct")
+    public String FormProductS(Model model){
+        
+        return "templatesAdmin/form-Products";
+}
+        @RequestMapping("/listProducts")
+    public String ListProducts(Model model){
+        
+        return "templatesAdmin/list-Products";
+}
+           @RequestMapping("/listClients")
+    public String ListClients(Model model){
+        
+        return "templatesAdmin/list-clients";
+}
+             @RequestMapping("/listUser")
+    public String ListUser(Model model){
+        
+        return "templatesAdmin/list-users";
+}
+    
 }
