@@ -108,10 +108,16 @@
                                                                                                 <h4 class="m-b-0 text-white">Formulario de registro</h4>
                                                                                             </div>
                                                                                             <div class="card-body">
-                                                                                                <form  th:method="post" th:object="${user}" id="form-persona" th:action="@{/user/save}" action="#">
+                                                                                                <form  th:method="post" th:object="${user}"  th:action="@{/user}">
                                                                                                     <div class="form-body">
                                                                                                         <h3 class="card-title">Informacion del usuario</h3>
                                                                                                         <hr>
+                                                                                                            <div th:if="${status == 1}" class="col-12 alert alert-success" role="alert">
+                                                                                                                [[${msg}]]
+                                                                                                            </div>
+                                                                                                            <div th:if="${status == 0}" class="col-12 alert alert-danger" role="alert">
+                                                                                                                [[${msg}]]
+                                                                                                            </div>
                                                                                                             <div class="row p-t-20">
 
 
@@ -120,112 +126,109 @@
                                                                                                                     <div class="form-group">
                                                                                                                         <label class="control-label">UserName</label>
 
-                                                                                                                        <input type="hidden"  name="codigo" value="">
+                                                                                                                        <input type="hidden"  name="id" th:field="*{id}"/>
 
 
 
-                                                                                                                            <input type="text" th:field="*{username}" maxlength="80" id="username" value="" required  name="username" class="form-control" placeholder="username">
+                                                                                                                        <input type="text" th:field="*{username}" maxlength="80" id="username" value="" required  name="username" class="form-control" placeholder="username">
 
-                                                                                                                                </div>
-                                                                                                                                </div>
-                                                                                                                                <!--/span-->
-                                                                                                                                <!--/span-->
-                                                                                                                                <div class="col-md-6 mt-3">
-                                                                                                                                    <div class="form-group">
-                                                                                                                                        <label class="control-label" >Email</label>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <!--/span-->
+                                                                                                                <!--/span-->
+                                                                                                                <div class="col-md-6 mt-3">
+                                                                                                                    <div class="form-group">
+                                                                                                                        <label class="control-label" >Email</label>
 
-                                                                                                                                        <input type="email" th:field="*{email}" id="email" name="email"  class="form-control" required placeholder="email">
+                                                                                                                        <input type="email" th:field="*{email}" id="email" name="email"  class="form-control" required placeholder="email">
 
-                                                                                                                                    </div>
-                                                                                                                                </div>
-
-
-
-
-                                                                                                                                <div class="col-md-6">
-                                                                                                                                    <div class="form-group">
-                                                                                                                                        <label>Rol</label>
-
-                                                                                                                                        <select  th:field="*{role}"id="role" name="role" required class="form-control custom-select">
-                                                                                                                                            <option value="">--Seleccione--</option>
-                                                                                                                                            <option value="_admin">Admin</option>
-                                                                                                                                            <option value="_otro">Otro</option>
-                                                                                                                                        </select>
-
-                                                                                                                                    </div>
-                                                                                                                                </div>
-
-
-                                                                                                                                <div class="col-md-6">
-
-
-                                                                                                                                    <div class="col-md-6">
-                                                                                                                                        <div class="form-group">
-                                                                                                                                            <label class="control-label">Estado</label>
-
-                                                                                                                                            <div class="form-check">
-                                                                                                                                                <input th:field="*{status}" class="form-check-input" value="1" type="radio" name="status" id="flexRadioDefault1" checked="">
-                                                                                                                                                    <label class="form-check-label" for="flexRadioDefault1">
-                                                                                                                                                        Activo
-                                                                                                                                                    </label>
-                                                                                                                                            </div>
-                                                                                                                                            <div class="form-check">
-                                                                                                                                                <input h:field="*{status}" class="form-check-input" value="0" type="radio" name="status" id="flexRadioDefault2">
-                                                                                                                                                    <label class="form-check-label" for="flexRadioDefault2">
-                                                                                                                                                        Inactivo
-                                                                                                                                                    </label>
-                                                                                                                                            </div>
-
-
-                                                                                                                                        </div>
-
-                                                                                                                                        <!--/span-->
-                                                                                                                                    </div>
-
-                                                                                                                                    <!--/span-->
-                                                                                                                                </div>
-                                                                                                                                <div class="col-md-6 mt-3">
-                                                                                                                                    <div class="form-group">
-                                                                                                                                        <label class="control-label">Password</label>
-
-                                                                                                                                        <input type="hidden"  name="codigo" value="" />
-                                                                                                                                        <input type="password"  th:field="*{password}" id="password" value="" required  name="password" class="form-control" placeholder="password"/>
-
-                                                                                                                                    </div>
-                                                                                                                                </div>
-                                                                                                                                <!--/row-->
-
-                                                                                                                                <!--/row-->
-
-                                                                                                                                <!--/span-->
-
-                                                                                                                                <!--/span-->
-                                                                                                                                </div>
-
-                                                                                                                                <!--/row-->
+                                                                                                                    </div>
+                                                                                                                </div>
 
 
 
 
-                                                                                                                                </div>
-                                                                                                                                <div class="form-actions">
+                                                                                                                <div class="col-md-6">
+                                                                                                                    <div class="form-group">
+                                                                                                                        <label>Rol</label>
 
-                                                                                                                                   
-                                                                                                                                            <button type="submit"  th:if="${mode == 'new'}" class="btn btn-success"  ><i class="fa fa-check"></i> Registrar</button>
+                                                                                                                        <select  th:field="*{role}"id="role" name="role" required class="form-control custom-select">
+                                                                                                                            <option value="">--Seleccione--</option>
+                                                                                                                            <option value="_admin">Admin</option>
+                                                                                                                            <option value="_otro">Otro</option>
+                                                                                                                        </select>
 
-                                    
-                                                                                                                                            <button type="submit" th:if="${mode == 'update'}"  class="btn btn-success"  ><i class="fa fa-check"></i> Actualizar</button>
+                                                                                                                    </div>
+                                                                                                                </div>
 
-                                                                                                                                            <a th:href="@{/dashboard}"><button type="button" class="btn btn-inverse">Cancel</button></a> 
-                                                                                                                                            </div>
-                                                                                                                                            </form>
-                                                                                                                                            </div>
-                                                                                                                                            </div>
-                                                                                                                                            </div>
-                                                                                                                                            </div>
-                                                                                                                                            <!-- Row -->
-                                                                                                                                            <!-- Row -->
 
+                                                                                                                <div class="col-md-6">
+
+
+                                                                                                                    <div class="col-md-6">
+                                                                                                                        <div class="form-group">
+                                                                                                                            <label class="control-label">Estado</label>
+
+                                                                                                                            <div class="form-check">
+                                                                                                                                <input th:field="*{status}" class="form-check-input" value="1" type="radio" name="status" id="flexRadioDefault1">
+                                                                                                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                                                                                                        Activo
+                                                                                                                                    </label>
+                                                                                                                            </div>
+                                                                                                                            <div class="form-check">
+                                                                                                                                <input h:field="*{status}" class="form-check-input" value="0" type="radio" name="status" id="flexRadioDefault2">
+                                                                                                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                                                                                                        Inactivo
+                                                                                                                                    </label>
+                                                                                                                            </div>
+
+
+                                                                                                                        </div>
+
+                                                                                                                        <!--/span-->
+                                                                                                                    </div>
+
+                                                                                                                    <!--/span-->
+                                                                                                                </div>
+                                                                                                                <div th:if="${ mode == 'new' }" class="col-md-6 mt-3">
+                                                                                                                    <div class="form-group">
+                                                                                                                        <label class="control-label">Password</label>
+                                                                                                                        <input type="password"  th:field="*{password}" id="password" value="" required  name="password" class="form-control" placeholder="password"/>
+
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <!--/row-->
+
+                                                                                                                <!--/row-->
+
+                                                                                                                <!--/span-->
+
+                                                                                                                <!--/span-->
+                                                                                                            </div>
+
+                                                                                                            <!--/row-->
+
+
+
+
+                                                                                                    </div>
+                                                                                                    <div class="form-actions">
+
+
+                                                                                                        <button th:if="${ mode == 'new' }" type="submit"   class="btn btn-success"  ><i class="fa fa-check"></i> Registrar</button>
+
+
+                                                                                                        <button th:if="${ mode == 'update' }" type="submit"   class="btn btn-success"  ><i class="fa fa-check"></i> Actualizar</button>
+
+                                                                                                        <a th:href="@{/dashboard}"><button type="button" class="btn btn-inverse">Cancel</button></a> 
+                                                                                                    </div>
+                                                                                                </form>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- Row -->
+                                                                                <!-- Row -->
 
 
 
@@ -234,169 +237,170 @@
 
 
 
-                                                                                                                                            <!-- Row -->
-                                                                                                                                            <!-- Row -->
+
+                                                                                <!-- Row -->
+                                                                                <!-- Row -->
 
 
-                                                                                                                                            <!-- Row -->
-                                                                                                                                            <!-- ============================================================== -->
-                                                                                                                                            <!-- End PAge Content -->
-                                                                                                                                            <!-- ============================================================== -->
-                                                                                                                                            <!-- ============================================================== -->
-                                                                                                                                            <!-- Right sidebar -->
-                                                                                                                                            <!-- ============================================================== -->
-                                                                                                                                            <!-- .right-sidebar -->
-                                                                                                                                            <div class="right-sidebar">
-                                                                                                                                                <div class="slimscrollright">
-                                                                                                                                                    <div class="rpanel-title"> Service Panel <span><i class="ti-close right-side-toggle"></i></span> </div>
-                                                                                                                                                    <div class="r-panel-body">
-                                                                                                                                                        <ul id="themecolors" class="m-t-20">
-                                                                                                                                                            <li><b>With Light sidebar</b></li>
-                                                                                                                                                            <li><a href="javascript:void(0)" data-theme="default" class="default-theme">1</a></li>
-                                                                                                                                                            <li><a href="javascript:void(0)" data-theme="green" class="green-theme">2</a></li>
-                                                                                                                                                            <li><a href="javascript:void(0)" data-theme="red" class="red-theme">3</a></li>
-                                                                                                                                                            <li><a href="javascript:void(0)" data-theme="blue" class="blue-theme">4</a></li>
-                                                                                                                                                            <li><a href="javascript:void(0)" data-theme="purple" class="purple-theme">5</a></li>
-                                                                                                                                                            <li><a href="javascript:void(0)" data-theme="megna" class="megna-theme">6</a></li>
-                                                                                                                                                            <li class="d-block m-t-30"><b>With Dark sidebar</b></li>
-                                                                                                                                                            <li><a href="javascript:void(0)" data-theme="default-dark" class="default-dark-theme working">7</a></li>
-                                                                                                                                                            <li><a href="javascript:void(0)" data-theme="green-dark" class="green-dark-theme">8</a></li>
-                                                                                                                                                            <li><a href="javascript:void(0)" data-theme="red-dark" class="red-dark-theme">9</a></li>
-                                                                                                                                                            <li><a href="javascript:void(0)" data-theme="blue-dark" class="blue-dark-theme">10</a></li>
-                                                                                                                                                            <li><a href="javascript:void(0)" data-theme="purple-dark" class="purple-dark-theme">11</a></li>
-                                                                                                                                                            <li><a href="javascript:void(0)" data-theme="megna-dark" class="megna-dark-theme ">12</a></li>
-                                                                                                                                                        </ul>
-                                                                                                                                                        <ul class="m-t-20 chatonline">
-                                                                                                                                                            <li><b>Chat option</b></li>
-                                                                                                                                                            <li>
-                                                                                                                                                                <a href="javascript:void(0)"><img th:src="@{/Assets_Admin/assets/images/users/1.jpg}" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
-                                                                                                                                                            </li>
-                                                                                                                                                            <li>
-                                                                                                                                                                <a href="javascript:void(0)"><img th:src="@{/Assets_Admin/assets/images/users/2.jpg}" alt="user-img" class="img-circle"> <span>Genelia Deshmukh <small class="text-warning">Away</small></span></a>
-                                                                                                                                                            </li>
-                                                                                                                                                            <li>
-                                                                                                                                                                <a href="javascript:void(0)"><img th:src="@{Assets_Admin/assets/images/users/3.jpg}" alt="user-img" class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a>
-                                                                                                                                                            </li>
-                                                                                                                                                            <li>
-                                                                                                                                                                <a href="javascript:void(0)"><img th:src="@{Assets_Admin/assets/images/users/4.jpg}" alt="user-img" class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a>
-                                                                                                                                                            </li>
-                                                                                                                                                            <li>
-                                                                                                                                                                <a href="javascript:void(0)"><img th:src="@{Assets_Admin/assets/images/users/5.jpg}" alt="user-img" class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a>
-                                                                                                                                                            </li>
-                                                                                                                                                            <li>
-                                                                                                                                                                <a href="javascript:void(0)"><img th:src="@{Assets_Admin/assets/images/users/6.jpg}" alt="user-img" class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a>
-                                                                                                                                                            </li>
-                                                                                                                                                            <li>
-                                                                                                                                                                <a href="javascript:void(0)"><img th:src="@{Assets_Admin/assets/images/users/7.jpg}" alt="user-img" class="img-circle"> <span>Hritik Roshan<small class="text-success">online</small></span></a>
-                                                                                                                                                            </li>
-                                                                                                                                                            <li>
-                                                                                                                                                                <a href="javascript:void(0)"><img th:src="@{Assets_Admin/assets/images/users/8.jpg}" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="text-success">online</small></span></a>
-                                                                                                                                                            </li>
-                                                                                                                                                        </ul>
-                                                                                                                                                    </div>
-                                                                                                                                                </div>
-                                                                                                                                            </div>
-                                                                                                                                            <!-- ============================================================== -->
-                                                                                                                                            <!-- End Right sidebar -->
-                                                                                                                                            <!-- ============================================================== -->
-                                                                                                                                            </div>
-                                                                                                                                            <!-- ============================================================== -->
-                                                                                                                                            <!-- End Container fluid  -->
-                                                                                                                                            <!-- ============================================================== -->
-                                                                                                                                            <!-- ============================================================== -->
-                                                                                                                                            <!-- footer -->
-                                                                                                                                            <!-- ============================================================== -->
-                                                                                                                                            <footer th:replace="Fragment_Admin/fragment_Admin::footerAdmin"></footer>
-                                                                                                                                            <!-- ============================================================== -->
-                                                                                                                                            <!-- End footer -->
-                                                                                                                                            <!-- ============================================================== -->
-                                                                                                                                            </div>
-                                                                                                                                            <!-- ============================================================== -->
-                                                                                                                                            <!-- End Page wrapper  -->
-                                                                                                                                            <!-- ============================================================== -->
-                                                                                                                                            </div>
-                                                                                                                                            <!-- ============================================================== -->
-                                                                                                                                            <!-- End Wrapper -->
-                                                                                                                                            <!-- ============================================================== -->
-                                                                                                                                            <!-- ============================================================== -->
-                                                                                                                                            <!-- All Jquery -->
-                                                                                                                                            <!-- ============================================================== -->
-                                                                                                                                            <script th:src="@{/Assets_Admin/assets/node_modules/jquery/jquery.min.js}"></script>
-                                                                                                                                            <!-- Bootstrap tether Core JavaScript -->
-                                                                                                                                            <script th:src="@{/Assets_Admin/assets/node_modules/bootstrap/js/popper.min.js}"></script>
-                                                                                                                                            <script th:src="@{/Assets_Admin/assets/node_modules/bootstrap/js/bootstrap.min.js}"></script>
-                                                                                                                                            <!-- slimscrollbar scrollbar JavaScript -->
-                                                                                                                                            <script th:src="@{/Assets_Admin/assets/node_modules/ps/perfect-scrollbar.jquery.min.js}"></script>
-                                                                                                                                            <!--Wave Effects -->
-                                                                                                                                            <script th:src="@{/Assets_Admin/main/js/waves.js}"></script>
-                                                                                                                                            <!--Menu sidebar -->
-                                                                                                                                            <script th:src="@{/Assets_Admin/main/js/sidebarmenu.js}"></script>
-                                                                                                                                            <!--stickey kit -->
-                                                                                                                                            <script th:src="@{/Assets_Admin/assets/node_modules/sticky-kit-master/dist/sticky-kit.min.js}"></script>
-                                                                                                                                            <script th:src="@{/Assets_Admin/assets/node_modules/sparkline/jquery.sparkline.min.js}"></script>
-                                                                                                                                            <!--Custom JavaScript -->
-                                                                                                                                            <script th:src="@{/Assets_Admin/main/js/custom.min.js}"></script>
-                                                                                                                                            <!-- ============================================================== -->
-                                                                                                                                            <!-- Style switcher -->
-                                                                                                                                            <!-- ============================================================== -->
-                                                                                                                                            <script th:src="@{/Assets_Admin/assets/node_modules/styleswitcher/jQuery.style.switcher.js}"></script>
-                                                                                                                                            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-                                                                                                                                            <script th:src="@{/Assets_Admin/main/js/jquery.validate.js}"></script>
-                                                                                                                                            <script th:src="@{/Assets_Admin/main/js/localization/messages_es.min.js}"></script>
-                                                                                                                                            <script th:src="@{/Assets_Admin/main/js/jquery.serializejson.js}"></script>
+                                                                                <!-- Row -->
+                                                                                <!-- ============================================================== -->
+                                                                                <!-- End PAge Content -->
+                                                                                <!-- ============================================================== -->
+                                                                                <!-- ============================================================== -->
+                                                                                <!-- Right sidebar -->
+                                                                                <!-- ============================================================== -->
+                                                                                <!-- .right-sidebar -->
+                                                                                <div class="right-sidebar">
+                                                                                    <div class="slimscrollright">
+                                                                                        <div class="rpanel-title"> Service Panel <span><i class="ti-close right-side-toggle"></i></span> </div>
+                                                                                        <div class="r-panel-body">
+                                                                                            <ul id="themecolors" class="m-t-20">
+                                                                                                <li><b>With Light sidebar</b></li>
+                                                                                                <li><a href="javascript:void(0)" data-theme="default" class="default-theme">1</a></li>
+                                                                                                <li><a href="javascript:void(0)" data-theme="green" class="green-theme">2</a></li>
+                                                                                                <li><a href="javascript:void(0)" data-theme="red" class="red-theme">3</a></li>
+                                                                                                <li><a href="javascript:void(0)" data-theme="blue" class="blue-theme">4</a></li>
+                                                                                                <li><a href="javascript:void(0)" data-theme="purple" class="purple-theme">5</a></li>
+                                                                                                <li><a href="javascript:void(0)" data-theme="megna" class="megna-theme">6</a></li>
+                                                                                                <li class="d-block m-t-30"><b>With Dark sidebar</b></li>
+                                                                                                <li><a href="javascript:void(0)" data-theme="default-dark" class="default-dark-theme working">7</a></li>
+                                                                                                <li><a href="javascript:void(0)" data-theme="green-dark" class="green-dark-theme">8</a></li>
+                                                                                                <li><a href="javascript:void(0)" data-theme="red-dark" class="red-dark-theme">9</a></li>
+                                                                                                <li><a href="javascript:void(0)" data-theme="blue-dark" class="blue-dark-theme">10</a></li>
+                                                                                                <li><a href="javascript:void(0)" data-theme="purple-dark" class="purple-dark-theme">11</a></li>
+                                                                                                <li><a href="javascript:void(0)" data-theme="megna-dark" class="megna-dark-theme ">12</a></li>
+                                                                                            </ul>
+                                                                                            <ul class="m-t-20 chatonline">
+                                                                                                <li><b>Chat option</b></li>
+                                                                                                <li>
+                                                                                                    <a href="javascript:void(0)"><img th:src="@{/Assets_Admin/assets/images/users/1.jpg}" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <a href="javascript:void(0)"><img th:src="@{/Assets_Admin/assets/images/users/2.jpg}" alt="user-img" class="img-circle"> <span>Genelia Deshmukh <small class="text-warning">Away</small></span></a>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <a href="javascript:void(0)"><img th:src="@{Assets_Admin/assets/images/users/3.jpg}" alt="user-img" class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <a href="javascript:void(0)"><img th:src="@{Assets_Admin/assets/images/users/4.jpg}" alt="user-img" class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <a href="javascript:void(0)"><img th:src="@{Assets_Admin/assets/images/users/5.jpg}" alt="user-img" class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <a href="javascript:void(0)"><img th:src="@{Assets_Admin/assets/images/users/6.jpg}" alt="user-img" class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <a href="javascript:void(0)"><img th:src="@{Assets_Admin/assets/images/users/7.jpg}" alt="user-img" class="img-circle"> <span>Hritik Roshan<small class="text-success">online</small></span></a>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <a href="javascript:void(0)"><img th:src="@{Assets_Admin/assets/images/users/8.jpg}" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="text-success">online</small></span></a>
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- ============================================================== -->
+                                                                                <!-- End Right sidebar -->
+                                                                                <!-- ============================================================== -->
+                                                                            </div>
+                                                                            <!-- ============================================================== -->
+                                                                            <!-- End Container fluid  -->
+                                                                            <!-- ============================================================== -->
+                                                                            <!-- ============================================================== -->
+                                                                            <!-- footer -->
+                                                                            <!-- ============================================================== -->
+                                                                            <footer th:replace="Fragment_Admin/fragment_Admin::footerAdmin"></footer>
+                                                                            <!-- ============================================================== -->
+                                                                            <!-- End footer -->
+                                                                            <!-- ============================================================== -->
+                                                                        </div>
+                                                                        <!-- ============================================================== -->
+                                                                        <!-- End Page wrapper  -->
+                                                                        <!-- ============================================================== -->
+                                                                    </div>
+                                                                    <!-- ============================================================== -->
+                                                                    <!-- End Wrapper -->
+                                                                    <!-- ============================================================== -->
+                                                                    <!-- ============================================================== -->
+                                                                    <!-- All Jquery -->
+                                                                    <!-- ============================================================== -->
+                                                                    <script th:src="@{/Assets_Admin/assets/node_modules/jquery/jquery.min.js}"></script>
+                                                                    <!-- Bootstrap tether Core JavaScript -->
+                                                                    <script th:src="@{/Assets_Admin/assets/node_modules/bootstrap/js/popper.min.js}"></script>
+                                                                    <script th:src="@{/Assets_Admin/assets/node_modules/bootstrap/js/bootstrap.min.js}"></script>
+                                                                    <!-- slimscrollbar scrollbar JavaScript -->
+                                                                    <script th:src="@{/Assets_Admin/assets/node_modules/ps/perfect-scrollbar.jquery.min.js}"></script>
+                                                                    <!--Wave Effects -->
+                                                                    <script th:src="@{/Assets_Admin/main/js/waves.js}"></script>
+                                                                    <!--Menu sidebar -->
+                                                                    <script th:src="@{/Assets_Admin/main/js/sidebarmenu.js}"></script>
+                                                                    <!--stickey kit -->
+                                                                    <script th:src="@{/Assets_Admin/assets/node_modules/sticky-kit-master/dist/sticky-kit.min.js}"></script>
+                                                                    <script th:src="@{/Assets_Admin/assets/node_modules/sparkline/jquery.sparkline.min.js}"></script>
+                                                                    <!--Custom JavaScript -->
+                                                                    <script th:src="@{/Assets_Admin/main/js/custom.min.js}"></script>
+                                                                    <!-- ============================================================== -->
+                                                                    <!-- Style switcher -->
+                                                                    <!-- ============================================================== -->
+                                                                    <script th:src="@{/Assets_Admin/assets/node_modules/styleswitcher/jQuery.style.switcher.js}"></script>
+                                                                    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                                                                    <script th:src="@{/Assets_Admin/main/js/jquery.validate.js}"></script>
+                                                                    <script th:src="@{/Assets_Admin/main/js/localization/messages_es.min.js}"></script>
+                                                                    <script th:src="@{/Assets_Admin/main/js/jquery.serializejson.js}"></script>
 
-                                                                                                                                            <script>
-                                                                                                                                                var filesSelected = document.getElementById("btn_Subir_Imagen").files;
-                                                                                                                                                $("#btn_Subir_Imagen").change(function () {
-                                                                                                                                                    var filesSelected = document.getElementById("btn_Subir_Imagen").files;
-                                                                                                                                                    if (filesSelected.length > 0) {
-                                                                                                                                                        var fileToLoad = filesSelected[0];
-                                                                                                                                                        var fileReader = new FileReader();
-                                                                                                                                                        fileReader.onload = function (fileLoadedEvent) {
-                                                                                                                                                            var base64value = fileLoadedEvent.target.result;
-                                                                                                                                                            // console.log(base64value);
-                                                                                                                                                            $("#txtimg64").val(base64value);
-                                                                                                                                                        };
-                                                                                                                                                        fileReader.readAsDataURL(fileToLoad);
-                                                                                                                                                    }
-                                                                                                                                                });
-                                                                                                                                            </script>
-                                                                                                                                            <script>
-                                                                                                                                                $(function () {
-                                                                                                                                                    $('#btn_Subir_Imagen').change(function (e) {
-                                                                                                                                                        addImage(e);
-                                                                                                                                                    });
-                                                                                                                                                    function addImage(e) {
-                                                                                                                                                        var file = e.target.files[0],
-                                                                                                                                                                imageType = /image.*/;
-                                                                                                                                                        if (!file.type.match(imageType))
-                                                                                                                                                            return;
-                                                                                                                                                        var reader = new FileReader();
-                                                                                                                                                        reader.onload = fileOnload;
-                                                                                                                                                        reader.readAsDataURL(file);
-                                                                                                                                                    }
+                                                                    <script>
+                                                                        var filesSelected = document.getElementById("btn_Subir_Imagen").files;
+                                                                        $("#btn_Subir_Imagen").change(function () {
+                                                                            var filesSelected = document.getElementById("btn_Subir_Imagen").files;
+                                                                            if (filesSelected.length > 0) {
+                                                                                var fileToLoad = filesSelected[0];
+                                                                                var fileReader = new FileReader();
+                                                                                fileReader.onload = function (fileLoadedEvent) {
+                                                                                    var base64value = fileLoadedEvent.target.result;
+                                                                                    // console.log(base64value);
+                                                                                    $("#txtimg64").val(base64value);
+                                                                                };
+                                                                                fileReader.readAsDataURL(fileToLoad);
+                                                                            }
+                                                                        });
+                                                                    </script>
+                                                                    <script>
+                                                                        $(function () {
+                                                                            $('#btn_Subir_Imagen').change(function (e) {
+                                                                                addImage(e);
+                                                                            });
+                                                                            function addImage(e) {
+                                                                                var file = e.target.files[0],
+                                                                                        imageType = /image.*/;
+                                                                                if (!file.type.match(imageType))
+                                                                                    return;
+                                                                                var reader = new FileReader();
+                                                                                reader.onload = fileOnload;
+                                                                                reader.readAsDataURL(file);
+                                                                            }
 
-                                                                                                                                                    function fileOnload(e) {
-                                                                                                                                                        var result = e.target.result;
-                                                                                                                                                        $('#Img_Personal').attr("src", result);
-                                                                                                                                                    }
+                                                                            function fileOnload(e) {
+                                                                                var result = e.target.result;
+                                                                                $('#Img_Personal').attr("src", result);
+                                                                            }
 
-                                                                                                                                                    $("#btn_Subir_Imagen").change(function () {
-                                                                                                                                                        var filesSelected = document.getElementById("btn_Subir_Imagen").files;
-                                                                                                                                                        if (filesSelected.length > 0) {
-                                                                                                                                                            var fileToLoad = filesSelected[0];
-                                                                                                                                                            var fileReader = new FileReader();
-                                                                                                                                                            fileReader.onload = function (fileLoadedEvent) {
-                                                                                                                                                                var base64value = fileLoadedEvent.target.result;
-                                                                                                                                                                $("#txtimg64").val(base64value);
-                                                                                                                                                            };
-                                                                                                                                                            fileReader.readAsDataURL(fileToLoad);
-                                                                                                                                                        }
+                                                                            $("#btn_Subir_Imagen").change(function () {
+                                                                                var filesSelected = document.getElementById("btn_Subir_Imagen").files;
+                                                                                if (filesSelected.length > 0) {
+                                                                                    var fileToLoad = filesSelected[0];
+                                                                                    var fileReader = new FileReader();
+                                                                                    fileReader.onload = function (fileLoadedEvent) {
+                                                                                        var base64value = fileLoadedEvent.target.result;
+                                                                                        $("#txtimg64").val(base64value);
+                                                                                    };
+                                                                                    fileReader.readAsDataURL(fileToLoad);
+                                                                                }
 
-                                                                                                                                                    });
-                                                                                                                                                });
-                                                                                                                                            </script>
-                                                                                                                                            <script src="js/funciones/form-personal.js"></script>
-                                                                                                                                            </body>
+                                                                            });
+                                                                        });
+                                                                    </script>
+                                                                    <script src="js/funciones/form-personal.js"></script>
+                                                                </body>
 
-                                                                                                                                            </html>
+                                                                </html>

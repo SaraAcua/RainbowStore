@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -40,8 +41,25 @@ public class UserController {
     private UserRepository userRepository;
 
     @RequestMapping("/formUser")
-    public ModelAndView FormUser() {
-        return getViewUser(null, new User(), -1,"","new");
+    public ModelAndView FormUser(Model model) {
+        return getViewUser(null, new User(), -1, "", "new");
+    }
+
+    @RequestMapping("/listUser")
+    public String ListUser(Model model) {
+        model.addAttribute("users", userRepository.findAll());
+        return "templatesAdmin/list-users";
+    }
+
+    @GetMapping("/formUser/{id}")
+    public ModelAndView getUser(Model model, @PathVariable("id") Integer id) {
+        if (userRepository.findById(id).isPresent()) {
+            User user = userRepository.findById(id).get();
+            return getViewUser(null, user, -1, "", "update");
+        } else {
+            return getViewUser(null, new User(), -1, "", "new");
+        }
+
     }
 
     @PostMapping("/save")
@@ -114,7 +132,6 @@ public class UserController {
         }
     }
 
-
     @Transactional
     @PostMapping("/user")
     public ModelAndView userSave(HttpServletRequest request, @ModelAttribute("user") User user, BindingResult result) {
@@ -123,8 +140,8 @@ public class UserController {
             if (user.getId() != null) {
                 User oldUser = userRepository.findById(user.getId()).get();
                 user.setPassword(oldUser.getPassword());
-                userRepository.save(user);
-                return getViewUser(request, new User(), 1, "Registrado correctamente", "new");
+                User newUser = userRepository.save(user);
+                return getViewUser(request, newUser, 1, "actualizado correctamente", "update");
             } else {
                 if (userRepository.userByEmail(user.getEmail()) > 0) {
                     return getViewUser(request, user, 0, "Ya existe el email a registrar", "new");
@@ -141,12 +158,12 @@ public class UserController {
     }
 
     public ModelAndView getViewUser(HttpServletRequest request, User user, int status, String msg, String mode) {
+        ModelAndView view = new ModelAndView("templatesAdmin/form-user");
 
-        ModelAndView view = new ModelAndView("form-User");
         view.addObject("user", user);
         view.addObject("status", status);
-        view.addObject("mode", mode);
         view.addObject("msg", msg);
+        view.addObject("mode", mode);
 
         return view;
     }

@@ -112,10 +112,6 @@ public class homeController {
         
         return "templatesAdmin/list-clients";
 }
-             @RequestMapping("/listUser")
-    public String ListUser(Model model){
-        
-        return "templatesAdmin/list-users";
-}
+
     
 }

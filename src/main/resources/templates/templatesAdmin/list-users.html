@@ -107,15 +107,22 @@
                                                     <th>UserName</th>
                                                     <th>Email</th>
                                                     <th>Rol</th>
-                                                    <th>Email</th>
                                                     <th>Estado</th>
-                                                    <th>Clave</th>
                                                     <th>Acciones</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-
-                                             
+                                                <tr th:each="u : ${users}">
+                                                    <td th:text="${u.id}"></td>
+                                                    <td th:text="${u.username}"></td>
+                                                    <td th:text="${u.email}"></td>
+                                                    <td th:text="${u.role}"></td>
+                                                    <td th:if="${u.status == 1}"><span class="badge badge-success">Activo</span></td>
+                                                    <td th:if="${u.status == 0}"><span class="badge badge-danger">Inactivo</span></td>
+                                                    <td>
+                                                        <a th:href="@{/formUser/{id} (id=${u.id})}"><button class="btn btn-info"><i class="fa fa-eye"></i> Ver</button></a>
+                                                    </td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>

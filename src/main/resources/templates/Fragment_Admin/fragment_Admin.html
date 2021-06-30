@@ -16,14 +16,14 @@
                 <!-- Logo icon --><b>
                     <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                     <!-- Dark Logo icon -->
-                    <img th:src="@{Assets_Web/img/logo.png}" style="margin-left: -20px" width="90" height="50"  class="dark-logo" />
+                    <img th:src="@{Assets_Web/img/logo.png}" style="margin-left: -10px" width="90" height="50"  class="dark-logo" />
                     <!-- Light Logo icon -->
                     <img src="../../static" th:src="@{/Assets_Admin/assets/images/logoarco.png}" alt="homepage" class="light-logo" />
                 </b>
                 <!--End Logo icon -->
                 <!-- Logo text --><span>
                     <!-- dark Logo text -->
-                    <img  th:src="@{/Assets_Admin/assets/images/logoarco.png}" style="margin-left: -20px" height="50" width="190" alt="homepage" class="dark-logo" />
+                    <img  th:src="@{/Assets_Admin/assets/images/logoarco.png}" style="margin-left: -10px" height="50" width="190" alt="homepage" class="dark-logo" />
                     <!-- Light Logo text -->    
                     <img th:src="@{/Assets_Admin/assets/images/logoarco.png}" class="light-logo" alt="homepage" /></span> </a>
         </div>
@@ -92,7 +92,7 @@
                 <!-- Profile -->
                 <!-- ============================================================== -->
                 <li class="nav-item dropdown u-pro">
-                    <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/images/users/4.jpg" alt="user" class="" /> <span class="hidden-md-down"><?php echo ($_SESSION['Nombre']." ".$_SESSION['Apellido']) ?> &nbsp;<i class="fa fa-angle-down"></i></span> </a>
+                    <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img  th:src="@{/Assets_Admin/assets/images/users/4.jpg}" alt="user" class="" /> <span class="hidden-md-down"><?php echo ($_SESSION['Nombre']." ".$_SESSION['Apellido']) ?> &nbsp;<i class="fa fa-angle-down"></i></span> </a>
                     <div class="dropdown-menu dropdown-menu-right animated flipInY">
                         <ul class="dropdown-user">
                             <li>
