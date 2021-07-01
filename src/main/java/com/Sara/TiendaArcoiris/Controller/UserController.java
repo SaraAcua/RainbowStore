@@ -62,7 +62,7 @@ public class UserController {
 
     }
 
-    @PostMapping("/save")
+    @PostMapping("user/save")
     @ResponseBody
     public ResponseEntity saveUser(@RequestBody User user) {
         Map<String, Object> response = new HashMap<>();
@@ -99,7 +99,7 @@ public class UserController {
         }
     }
 
-    @GetMapping("/getAll")
+    @GetMapping("user/getAll")
     @ResponseBody
     public ResponseEntity getAllUsers() {
         Map<String, Object> response = new HashMap<>();
@@ -113,7 +113,7 @@ public class UserController {
         }
     }
 
-    @GetMapping("/find/{id}")
+    @GetMapping("user/find/{id}")
     @ResponseBody
     public ResponseEntity getUserById(@PathVariable("id") int id) {
         Map<String, Object> response = new HashMap<>();

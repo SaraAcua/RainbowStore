@@ -97,21 +97,9 @@ public class homeController {
         return "templatesAdmin/dashboard";
 }
 
-    @RequestMapping("/formProduct")
-    public String FormProductS(Model model){
+    
+   
         
-        return "templatesAdmin/form-Products";
-}
-        @RequestMapping("/listProducts")
-    public String ListProducts(Model model){
-        
-        return "templatesAdmin/list-Products";
-}
-           @RequestMapping("/listClients")
-    public String ListClients(Model model){
-        
-        return "templatesAdmin/list-clients";
-}
 
     
 }

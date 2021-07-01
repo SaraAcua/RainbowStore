@@ -40,6 +40,13 @@ public class ClientController {
 
     @Autowired
     private ClientRepository clientRepository;
+    
+        
+     @RequestMapping("/listClients")
+    public String ListClient(Model model) {
+        model.addAttribute("clients", clientRepository.findAll());
+        return "templatesAdmin/list-clients";
+    }
 
     @PostMapping("client/api/save")
     @ResponseBody
@@ -148,7 +155,7 @@ public class ClientController {
         }
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/client/{id}")
     public ResponseEntity<Client> getClientById(@PathVariable("id") int id) {
         Optional<Client> clientes = clientRepository.findById(id);
 
@@ -159,7 +166,7 @@ public class ClientController {
         }
     }
 
-    @PostMapping("/delete/{id}")
+    @PostMapping("/client/delete/{id}")
     public ResponseEntity<HttpStatus> deleteClient(@PathVariable("id") int id) {
         try {
             clientRepository.deleteById(id);

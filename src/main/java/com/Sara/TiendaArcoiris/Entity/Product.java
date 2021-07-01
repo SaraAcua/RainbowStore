@@ -32,13 +32,14 @@ public class Product implements Serializable {
     @Column(length = 300, nullable = true)
     private String description;
     private int stock;
-    private String status;
+    private int status;
     private int price;
 
     @OneToMany(mappedBy = "product")
     private List<ImageProduct> images;
 
     public Product() {
+        this.status = 1;
         images = new ArrayList();
     }
 
@@ -50,9 +51,13 @@ public class Product implements Serializable {
         this.price = price;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
+     public void setStatus(int status) {
+        this.status = status;
+    }
+
 
     public Integer getId() {
         return id;
